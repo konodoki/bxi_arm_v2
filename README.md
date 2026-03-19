@@ -4,6 +4,17 @@
 
 对应的apk程序仅仅只在pico4 ultra平台测试过
 
+```
+src/
+├── aero-hand-open #半醒手臂的驱动程序
+├── bxi_rl_controller_ros2_example #半醒机器人的控制示例
+├── elf3_arm_bringup #launch文件
+├── elf3_arm_ikpy_control_pico #
+├── fake_trigger #虚拟pico的扳机，仅仅用于测试
+├── hand_control #灵巧手部分的控制
+└── pico_bxi_server #pico的ros2驱动
+```
+
 # 运行demo
 ## 运行前先测试图传服务
 
@@ -48,18 +59,7 @@ ros2 launch elf3_arm_bringup elf3_arm_bringup.launch.py #启动手臂控制
 ```
 
 
-<!-- ```
-src/
-├── aero-hand-open #半醒手臂的驱动程序
-├── bxi_rl_controller_ros2_example #半醒机器人的控制示例
-├── elf3_arm_bringup #launch文件
-├── elf3_arm_ikpy_control_pico #
-├── fake_trigger #虚拟pico的扳机，仅仅用于测试
-├── hand_control #灵巧手部分的控制
-└── pico_bxi_server #pico的ros2驱动
-```
-
-# 各子目录详细介绍
+<!-- # 各子目录详细介绍
 ## pico_bxi_server
 此仓库会启动位于bin/mediamtx程序（已集成无需安装）从而启动一个rtsp服务器，具体的配置在mediamtx.yml。
 
