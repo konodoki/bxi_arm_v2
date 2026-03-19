@@ -122,7 +122,8 @@ int main(int argc, char ** argv)
   //启动ffmpeg推流
   ProcessHandler ffmpeg;
   //经过测试 0是深度 2是红外 4是rgb
-  ffmpeg.execute("ffmpeg", {"-loglevel","quiet","-framerate","60","-video_size","424x240","-i","/dev/video0","-vcodec","libx264","-preset","ultrafast","-tune","zerolatency","-rtsp_transport","udp","-f","rtsp","rtsp://127.0.0.1:2212/video"});
+  ffmpeg.execute("ffmpeg", {"-loglevel","quiet","-framerate","60","-video_size","424x240","-i","/dev/video4","-vcodec","libx264","-preset","ultrafast","-tune","zerolatency","-rtsp_transport","udp","-f","rtsp","rtsp://127.0.0.1:2212/video"});
+  // ffmpeg.execute("ffmpeg", {"-loglevel","quiet","-framerate","60","-video_size","1920x1680","-i","/dev/video4","-vcodec","libx264","-preset","ultrafast","-tune","zerolatency","-rtsp_transport","udp","-f","rtsp","rtsp://127.0.0.1:2212/video"});
   rclcpp::init(argc, argv);
   rclcpp::spin(std::make_shared<PicoPublisher>());
   rclcpp::shutdown();

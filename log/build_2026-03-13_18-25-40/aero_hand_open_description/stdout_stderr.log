@@ -1,0 +1,80 @@
+/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running egg_info
+writing ../../../../build/aero_hand_open_description/aero_hand_open_description.egg-info/PKG-INFO
+writing dependency_links to ../../../../build/aero_hand_open_description/aero_hand_open_description.egg-info/dependency_links.txt
+writing requirements to ../../../../build/aero_hand_open_description/aero_hand_open_description.egg-info/requires.txt
+writing top-level names to ../../../../build/aero_hand_open_description/aero_hand_open_description.egg-info/top_level.txt
+reading manifest file '../../../../build/aero_hand_open_description/aero_hand_open_description.egg-info/SOURCES.txt'
+writing manifest file '../../../../build/aero_hand_open_description/aero_hand_open_description.egg-info/SOURCES.txt'
+running build
+running install
+running install_data
+copying package.xml -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description
+copying launch/display.launch.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/launch
+copying launch/hw_display.launch.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/launch
+copying rviz/config.rviz -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/rviz
+copying urdf/aero_hand_open_left.urdf -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/urdf
+copying urdf/aero_hand_open_right.urdf -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/urdf
+copying meshes/left_pinky_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_ring_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_thumb_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_thumb_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_ring_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_middle_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_thumb_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_t_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_index_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_ring_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_pinky_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_index_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_thumb_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_pinky_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_thumb_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_pinky_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_thumb_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_middle_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_index_middle_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_index_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_pinky_middle_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_index_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_index_middle_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_middle_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_pinky_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_thumb_mcp_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_middle_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_t_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_ring_middle_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_middle_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_middle_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_ring_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_middle_middle_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_base_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_ring_middle_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_thumb_mcp_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_middle_middle_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_index_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_base_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_pinky_middle_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_ring_tip_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_index_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/left_ring_distal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying meshes/right_pinky_proximal_link.STL -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/meshes
+copying scripts/rviz_joint_bridge.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/share/aero_hand_open_description/scripts
+copying ../aero_open_sdk/__main__.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk
+copying ../aero_open_sdk/aero_hand_constants.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk
+copying ../aero_open_sdk/gui.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk
+copying ../aero_open_sdk/joints_to_actuations.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk
+copying ../aero_open_sdk/aero_hand.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk
+copying ../aero_open_sdk/actuations_to_joints.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk
+copying ../aero_open_sdk/__init__.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk
+copying ../aero_open_sdk/__pycache__/aero_hand.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk/__pycache__
+copying ../aero_open_sdk/__pycache__/actuations_to_joints.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk/__pycache__
+copying ../aero_open_sdk/__pycache__/joints_to_actuations.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk/__pycache__
+copying ../aero_open_sdk/__pycache__/__init__.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk/__pycache__
+copying ../aero_open_sdk/__pycache__/aero_hand_constants.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/aero_hand_open_description/aero_open_sdk/__pycache__
+running install_egg_info
+removing '/home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/python3.10/site-packages/aero_hand_open_description-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../../../build/aero_hand_open_description/aero_hand_open_description.egg-info to /home/kkkk/bxi_arm_v2/install/aero_hand_open_description/lib/python3.10/site-packages/aero_hand_open_description-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/kkkk/bxi_arm_v2/build/aero_hand_open_description/install.log'

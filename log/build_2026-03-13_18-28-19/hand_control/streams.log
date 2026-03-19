@@ -1,0 +1,25 @@
+[2.492s] Invoking command in '/home/kkkk/bxi_arm_v2/src/hand_control': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/hand_control/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/hand_control/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hand_control build --build-base /home/kkkk/bxi_arm_v2/build/hand_control/build install --record /home/kkkk/bxi_arm_v2/build/hand_control/install.log --single-version-externally-managed install_data
+[2.841s] running egg_info
+[2.867s] writing ../../build/hand_control/hand_control.egg-info/PKG-INFO
+[2.867s] writing dependency_links to ../../build/hand_control/hand_control.egg-info/dependency_links.txt
+[2.867s] writing entry points to ../../build/hand_control/hand_control.egg-info/entry_points.txt
+[2.867s] writing requirements to ../../build/hand_control/hand_control.egg-info/requires.txt
+[2.867s] writing top-level names to ../../build/hand_control/hand_control.egg-info/top_level.txt
+[2.910s] reading manifest file '../../build/hand_control/hand_control.egg-info/SOURCES.txt'
+[2.910s] writing manifest file '../../build/hand_control/hand_control.egg-info/SOURCES.txt'
+[2.910s] running build
+[2.910s] running build_py
+[2.910s] copying hand_control/hand_control.py -> /home/kkkk/bxi_arm_v2/build/hand_control/build/lib/hand_control
+[2.910s] copying hand_control/__init__.py -> /home/kkkk/bxi_arm_v2/build/hand_control/build/lib/hand_control
+[2.911s] running install
+[2.915s] running install_lib
+[2.937s] running install_data
+[2.937s] copying resource/hand_control -> /home/kkkk/bxi_arm_v2/install/hand_control/share/ament_index/resource_index/packages
+[2.938s] copying package.xml -> /home/kkkk/bxi_arm_v2/install/hand_control/share/hand_control
+[2.938s] running install_egg_info
+[2.965s] removing '/home/kkkk/bxi_arm_v2/install/hand_control/lib/python3.10/site-packages/hand_control-0.0.0-py3.10.egg-info' (and everything under it)
+[2.965s] Copying ../../build/hand_control/hand_control.egg-info to /home/kkkk/bxi_arm_v2/install/hand_control/lib/python3.10/site-packages/hand_control-0.0.0-py3.10.egg-info
+[2.965s] running install_scripts
+[3.123s] Installing hand_control script to /home/kkkk/bxi_arm_v2/install/hand_control/lib/hand_control
+[3.124s] writing list of installed files to '/home/kkkk/bxi_arm_v2/build/hand_control/install.log'
+[3.201s] Invoked command in '/home/kkkk/bxi_arm_v2/src/hand_control' returned '0': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/hand_control/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/hand_control/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hand_control build --build-base /home/kkkk/bxi_arm_v2/build/hand_control/build install --record /home/kkkk/bxi_arm_v2/build/hand_control/install.log --single-version-externally-managed install_data

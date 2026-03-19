@@ -1,0 +1,22 @@
+[35m[1mConsolidate compiler generated dependencies of target bxi_example_arm[0m
+[100%] Built target bxi_example_arm
+-- Install configuration: "Release"
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/lib/bxi_example_arm/bxi_example_arm
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/launch
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/launch/example_launch.py
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/launch/example_launch_hw.py
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/ament_index/resource_index/package_run_dependencies/bxi_example_arm
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/ament_index/resource_index/parent_prefix_path/bxi_example_arm
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/environment/ament_prefix_path.sh
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/environment/path.sh
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/environment/path.dsv
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/local_setup.bash
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/local_setup.sh
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/local_setup.zsh
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/local_setup.dsv
+-- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/package.dsv
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/ament_index/resource_index/packages/bxi_example_arm
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/cmake/bxi_example_armConfig.cmake
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/cmake/bxi_example_armConfig-version.cmake
+-- Up-to-date: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/package.xml

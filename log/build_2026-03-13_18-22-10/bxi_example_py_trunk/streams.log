@@ -1,0 +1,49 @@
+[2.440s] Invoking command in '/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/bxi_example_py_trunk': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/bxi_example_py_trunk build --build-base /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build install --record /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/install.log --single-version-externally-managed install_data
+[2.699s] /home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[2.699s]   warnings.warn(msg)
+[2.814s] running egg_info
+[2.843s] creating ../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info
+[2.843s] writing ../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info/PKG-INFO
+[2.843s] writing dependency_links to ../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info/dependency_links.txt
+[2.845s] writing entry points to ../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info/entry_points.txt
+[2.845s] writing requirements to ../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info/requires.txt
+[2.845s] writing top-level names to ../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info/top_level.txt
+[2.845s] writing manifest file '../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info/SOURCES.txt'
+[2.891s] reading manifest file '../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info/SOURCES.txt'
+[2.891s] writing manifest file '../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info/SOURCES.txt'
+[2.891s] running build
+[2.891s] running build_py
+[2.891s] creating /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk
+[2.891s] copying bxi_example_py_trunk/right_arm_handshake_controller.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk
+[2.891s] copying bxi_example_py_trunk/running_arm_controller.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk
+[2.891s] copying bxi_example_py_trunk/bxi_example.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk
+[2.891s] copying bxi_example_py_trunk/__init__.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk
+[2.891s] copying bxi_example_py_trunk/arm_motion_controller.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk
+[2.891s] running install
+[2.895s] running install_lib
+[2.917s] creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk
+[2.917s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk/right_arm_handshake_controller.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk
+[2.917s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk/running_arm_controller.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk
+[2.917s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk/bxi_example.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk
+[2.917s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk/__init__.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk
+[2.917s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build/lib/bxi_example_py_trunk/arm_motion_controller.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk
+[2.917s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk/right_arm_handshake_controller.py to right_arm_handshake_controller.cpython-310.pyc
+[2.917s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk/running_arm_controller.py to running_arm_controller.cpython-310.pyc
+[2.918s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk/bxi_example.py to bxi_example.cpython-310.pyc
+[2.924s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk/__init__.py to __init__.cpython-310.pyc
+[2.924s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk/arm_motion_controller.py to arm_motion_controller.cpython-310.pyc
+[2.925s] running install_data
+[2.925s] creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/share/ament_index/resource_index/packages
+[2.926s] copying resource/bxi_example_py_trunk -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/share/ament_index/resource_index/packages
+[2.926s] copying package.xml -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/share/bxi_example_py_trunk
+[2.926s] creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/share/bxi_example_py_trunk/launch
+[2.926s] copying launch/example_launch.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/share/bxi_example_py_trunk/launch
+[2.926s] copying launch/example_launch_hw.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/share/bxi_example_py_trunk/launch
+[2.926s] creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/share/bxi_example_py_trunk/policy
+[2.926s] copying policy/model.onnx -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/share/bxi_example_py_trunk/policy
+[2.933s] running install_egg_info
+[2.965s] Copying ../../../../build/bxi_example_py_trunk/bxi_example_py_trunk.egg-info to /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages/bxi_example_py_trunk-0.0.0-py3.10.egg-info
+[2.966s] running install_scripts
+[3.154s] Installing bxi_example_py_trunk script to /home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/bxi_example_py_trunk
+[3.155s] writing list of installed files to '/home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/install.log'
+[3.235s] Invoked command in '/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/bxi_example_py_trunk' returned '0': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/bxi_example_py_trunk/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/bxi_example_py_trunk build --build-base /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/build install --record /home/kkkk/bxi_arm_v2/build/bxi_example_py_trunk/install.log --single-version-externally-managed install_data

@@ -1,0 +1,71 @@
+[0.079s] Invoking command in '/home/kkkk/bxi_arm_v2/build/pico_bxi_server': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake /home/kkkk/bxi_arm_v2/src/pico_bxi_server -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_INSTALL_PREFIX=/home/kkkk/bxi_arm_v2/install/pico_bxi_server
+[0.487s] -- The C compiler identification is GNU 11.4.0
+[0.487s] -- The CXX compiler identification is GNU 11.4.0
+[0.487s] -- Detecting C compiler ABI info
+[0.594s] -- Detecting C compiler ABI info - done
+[0.612s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.616s] -- Detecting C compile features
+[0.616s] -- Detecting C compile features - done
+[0.622s] -- Detecting CXX compiler ABI info
+[0.836s] -- Detecting CXX compiler ABI info - done
+[0.849s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.856s] -- Detecting CXX compile features
+[0.856s] -- Detecting CXX compile features - done
+[0.862s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.639s] -- Found Python3: /home/kkkk/miniconda3/envs/ikpy/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.769s] -- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)
+[1.827s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.836s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.846s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.861s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.881s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.937s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.943s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.049s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.079s] -- Found FastRTPS: /opt/ros/humble/include  
+[2.123s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.138s] -- Looking for pthread.h
+[2.211s] -- Looking for pthread.h - found
+[2.211s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.297s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.299s] -- Found Threads: TRUE  
+[2.363s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[2.391s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.516s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.516s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/kkkk/bxi_arm_v2/src/pico_bxi_server/include>;/home/kkkk/bxi_arm_v2/src/pico_bxi_server/include
+[2.516s] -- Configured cppcheck exclude dirs and/or files: 
+[2.518s] -- Added test 'lint_cmake' to check CMake code style
+[2.519s] -- Added test 'uncrustify' to check C / C++ code style
+[2.520s] -- Configured uncrustify additional arguments: 
+[2.521s] -- Added test 'xmllint' to check XML markup files
+[2.524s] -- Configuring done
+[2.533s] -- Generating done
+[2.537s] -- Build files have been written to: /home/kkkk/bxi_arm_v2/build/pico_bxi_server
+[2.549s] Invoked command in '/home/kkkk/bxi_arm_v2/build/pico_bxi_server' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake /home/kkkk/bxi_arm_v2/src/pico_bxi_server -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_INSTALL_PREFIX=/home/kkkk/bxi_arm_v2/install/pico_bxi_server
+[2.551s] Invoking command in '/home/kkkk/bxi_arm_v2/build/pico_bxi_server': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --build /home/kkkk/bxi_arm_v2/build/pico_bxi_server -- -j16 -l16
+[2.620s] [ 25%] [32mBuilding CXX object CMakeFiles/pico_bxi_server.dir/src/pico_bxi_server.cpp.o[0m
+[2.620s] [ 75%] [32mBuilding CXX object CMakeFiles/pico_bxi_server.dir/src/TcpReceiver.cpp.o[0m
+[2.620s] [ 75%] [32mBuilding CXX object CMakeFiles/pico_bxi_server.dir/src/ProcessHandler.cpp.o[0m
+[6.604s] [100%] [32m[1mLinking CXX executable pico_bxi_server[0m
+[6.685s] [100%] Built target pico_bxi_server
+[6.695s] Invoked command in '/home/kkkk/bxi_arm_v2/build/pico_bxi_server' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --build /home/kkkk/bxi_arm_v2/build/pico_bxi_server -- -j16 -l16
+[6.696s] Invoking command in '/home/kkkk/bxi_arm_v2/build/pico_bxi_server': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --install /home/kkkk/bxi_arm_v2/build/pico_bxi_server
+[6.703s] -- Install configuration: "Release"
+[6.703s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/lib/pico_bxi_server/pico_bxi_server
+[6.703s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/pico_bxi_server/lib/pico_bxi_server/pico_bxi_server" to ""
+[6.703s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/ament_index/resource_index/package_run_dependencies/pico_bxi_server
+[6.703s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/ament_index/resource_index/parent_prefix_path/pico_bxi_server
+[6.703s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/environment/ament_prefix_path.sh
+[6.703s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/environment/ament_prefix_path.dsv
+[6.703s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/environment/path.sh
+[6.703s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/environment/path.dsv
+[6.703s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/local_setup.bash
+[6.704s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/local_setup.sh
+[6.704s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/local_setup.zsh
+[6.704s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/local_setup.dsv
+[6.704s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/package.dsv
+[6.704s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/ament_index/resource_index/packages/pico_bxi_server
+[6.704s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/cmake/pico_bxi_serverConfig.cmake
+[6.704s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/cmake/pico_bxi_serverConfig-version.cmake
+[6.704s] -- Installing: /home/kkkk/bxi_arm_v2/install/pico_bxi_server/share/pico_bxi_server/package.xml
+[6.705s] Invoked command in '/home/kkkk/bxi_arm_v2/build/pico_bxi_server' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --install /home/kkkk/bxi_arm_v2/build/pico_bxi_server

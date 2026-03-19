@@ -1,0 +1,31 @@
+[2.520s] Invoking command in '/home/kkkk/bxi_arm_v2/src/elf3_arm_ikpy_control_pico': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/elf3_arm_ikpy_control_pico build --build-base /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build install --record /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/install.log --single-version-externally-managed install_data
+[2.901s] running egg_info
+[2.921s] writing ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/PKG-INFO
+[2.925s] writing dependency_links to ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/dependency_links.txt
+[2.925s] writing entry points to ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/entry_points.txt
+[2.925s] writing requirements to ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/requires.txt
+[2.925s] writing top-level names to ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/top_level.txt
+[2.968s] reading manifest file '../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/SOURCES.txt'
+[2.969s] writing manifest file '../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/SOURCES.txt'
+[2.969s] running build
+[2.970s] running build_py
+[2.970s] copying elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+[2.970s] copying elf3_arm_ikpy_control_pico/sphere_leastlq.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+[2.970s] copying elf3_arm_ikpy_control_pico/pico_hand.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+[2.970s] copying elf3_arm_ikpy_control_pico/__init__.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+[2.973s] copying elf3_arm_ikpy_control_pico/filter.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+[2.973s] running install
+[2.975s] running install_lib
+[2.998s] running install_data
+[2.998s] copying resource/elf3_arm_ikpy_control_pico -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/share/ament_index/resource_index/packages
+[2.998s] copying package.xml -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/share/elf3_arm_ikpy_control_pico
+[2.998s] copying elf3_arm_ikpy_control_pico/sphere_leastlq.py -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/elf3_arm_ikpy_control_pico
+[2.999s] copying elf3_arm_ikpy_control_pico/filter.py -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/elf3_arm_ikpy_control_pico
+[2.999s] copying elf3_arm_ikpy_control_pico/pico_hand.py -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/elf3_arm_ikpy_control_pico
+[2.999s] running install_egg_info
+[3.021s] removing '/home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/python3.10/site-packages/elf3_arm_ikpy_control_pico-0.0.0-py3.10.egg-info' (and everything under it)
+[3.023s] Copying ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info to /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/python3.10/site-packages/elf3_arm_ikpy_control_pico-0.0.0-py3.10.egg-info
+[3.023s] running install_scripts
+[3.179s] Installing elf3_arm_ikpy_control_pico script to /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/elf3_arm_ikpy_control_pico
+[3.179s] writing list of installed files to '/home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/install.log'
+[3.259s] Invoked command in '/home/kkkk/bxi_arm_v2/src/elf3_arm_ikpy_control_pico' returned '0': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/elf3_arm_ikpy_control_pico build --build-base /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build install --record /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/install.log --single-version-externally-managed install_data

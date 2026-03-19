@@ -1,0 +1,24 @@
+[2.543s] Invoking command in '/home/kkkk/bxi_arm_v2/src/elf3_arm_bringup': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/elf3_arm_bringup/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/elf3_arm_bringup/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/elf3_arm_bringup build --build-base /home/kkkk/bxi_arm_v2/build/elf3_arm_bringup/build install --record /home/kkkk/bxi_arm_v2/build/elf3_arm_bringup/install.log --single-version-externally-managed install_data
+[2.822s] running egg_info
+[2.836s] writing ../../build/elf3_arm_bringup/elf3_arm_bringup.egg-info/PKG-INFO
+[2.838s] writing dependency_links to ../../build/elf3_arm_bringup/elf3_arm_bringup.egg-info/dependency_links.txt
+[2.838s] writing requirements to ../../build/elf3_arm_bringup/elf3_arm_bringup.egg-info/requires.txt
+[2.838s] writing top-level names to ../../build/elf3_arm_bringup/elf3_arm_bringup.egg-info/top_level.txt
+[2.869s] reading manifest file '../../build/elf3_arm_bringup/elf3_arm_bringup.egg-info/SOURCES.txt'
+[2.871s] writing manifest file '../../build/elf3_arm_bringup/elf3_arm_bringup.egg-info/SOURCES.txt'
+[2.871s] running build
+[2.871s] running build_py
+[2.871s] copying elf3_arm_bringup/__init__.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_bringup/build/lib/elf3_arm_bringup
+[2.871s] running install
+[2.876s] running install_lib
+[2.893s] running install_data
+[2.893s] copying resource/elf3_arm_bringup -> /home/kkkk/bxi_arm_v2/install/elf3_arm_bringup/share/ament_index/resource_index/packages
+[2.893s] copying package.xml -> /home/kkkk/bxi_arm_v2/install/elf3_arm_bringup/share/elf3_arm_bringup
+[2.893s] copying launch/elf3_arm_bringup_nohand.launch.py -> /home/kkkk/bxi_arm_v2/install/elf3_arm_bringup/share/elf3_arm_bringup/launch
+[2.893s] copying launch/elf3_arm_bringup.launch.py -> /home/kkkk/bxi_arm_v2/install/elf3_arm_bringup/share/elf3_arm_bringup/launch
+[2.894s] running install_egg_info
+[2.910s] removing '/home/kkkk/bxi_arm_v2/install/elf3_arm_bringup/lib/python3.10/site-packages/elf3_arm_bringup-0.0.0-py3.10.egg-info' (and everything under it)
+[2.911s] Copying ../../build/elf3_arm_bringup/elf3_arm_bringup.egg-info to /home/kkkk/bxi_arm_v2/install/elf3_arm_bringup/lib/python3.10/site-packages/elf3_arm_bringup-0.0.0-py3.10.egg-info
+[2.911s] running install_scripts
+[3.026s] writing list of installed files to '/home/kkkk/bxi_arm_v2/build/elf3_arm_bringup/install.log'
+[3.120s] Invoked command in '/home/kkkk/bxi_arm_v2/src/elf3_arm_bringup' returned '0': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/elf3_arm_bringup/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/elf3_arm_bringup/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/elf3_arm_bringup build --build-base /home/kkkk/bxi_arm_v2/build/elf3_arm_bringup/build install --record /home/kkkk/bxi_arm_v2/build/elf3_arm_bringup/install.log --single-version-externally-managed install_data

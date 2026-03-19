@@ -1,0 +1,380 @@
+[0.079s] Invoking command in '/home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake /home/kkkk/bxi_arm_v2/src/aero-hand-open/src/aero_hand_open_msgs -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_INSTALL_PREFIX=/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs
+[1.572s] -- The C compiler identification is GNU 11.4.0
+[1.572s] -- The CXX compiler identification is GNU 11.4.0
+[1.572s] -- Detecting C compiler ABI info
+[1.572s] -- Detecting C compiler ABI info - done
+[1.572s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.572s] -- Detecting C compile features
+[1.572s] -- Detecting C compile features - done
+[1.572s] -- Detecting CXX compiler ABI info
+[1.572s] -- Detecting CXX compiler ABI info - done
+[1.572s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.572s] -- Detecting CXX compile features
+[1.572s] -- Detecting CXX compile features - done
+[1.572s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.572s] -- Found Python3: /home/kkkk/miniconda3/envs/ikpy/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.572s] -- Found std_msgs: 4.9.1 (/opt/ros/humble/share/std_msgs/cmake)
+[1.572s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.572s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.572s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.572s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.573s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.573s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.573s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.573s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.573s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.573s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.573s] -- Found PythonInterp: /home/kkkk/miniconda3/envs/ikpy/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.573s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.573s] -- Found PythonLibs: /home/kkkk/miniconda3/envs/ikpy/lib/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.573s] -- Using PYTHON_EXECUTABLE: /home/kkkk/miniconda3/envs/ikpy/bin/python3
+[1.573s] -- Using PYTHON_INCLUDE_DIRS: /home/kkkk/miniconda3/envs/ikpy/include/python3.10
+[1.573s] -- Using PYTHON_LIBRARIES: /home/kkkk/miniconda3/envs/ikpy/lib/libpython3.10.so
+[1.573s] -- Found PythonExtra: .so  
+[1.573s] -- Using numpy include directory: /home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/numpy/_core/include
+[1.573s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.582s] -- Added test 'lint_cmake' to check CMake code style
+[1.583s] -- Added test 'xmllint' to check XML markup files
+[1.585s] -- Configuring done
+[1.600s] [33mCMake Warning at /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:166 (add_library):
+[1.600s]   Cannot generate a safe runtime search path for target
+[1.600s]   aero_hand_open_msgs__rosidl_generator_py because files in some directories
+[1.600s]   may conflict with libraries in implicit directories:
+[1.600s] 
+[1.600s]     runtime library [libpython3.10.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+[1.600s]       /home/kkkk/miniconda3/envs/ikpy/lib
+[1.600s] 
+[1.601s]   Some of these libraries may not be found correctly.
+[1.601s] Call Stack (most recent call first):
+[1.601s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[1.601s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[1.601s]   CMakeLists.txt:17 (rosidl_generate_interfaces)
+[1.601s] 
+[1.601s] [0m
+[1.602s] [33mCMake Warning at /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:226 (add_library):
+[1.602s]   Cannot generate a safe runtime search path for target
+[1.602s]   aero_hand_open_msgs__rosidl_typesupport_fastrtps_c__pyext because files in
+[1.602s]   some directories may conflict with libraries in implicit directories:
+[1.602s] 
+[1.602s]     runtime library [libpython3.10.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+[1.602s]       /home/kkkk/miniconda3/envs/ikpy/lib
+[1.602s] 
+[1.602s]   Some of these libraries may not be found correctly.
+[1.602s] Call Stack (most recent call first):
+[1.602s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[1.602s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[1.602s]   CMakeLists.txt:17 (rosidl_generate_interfaces)
+[1.602s] 
+[1.602s] [0m
+[1.603s] [33mCMake Warning at /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:226 (add_library):
+[1.603s]   Cannot generate a safe runtime search path for target
+[1.603s]   aero_hand_open_msgs__rosidl_typesupport_introspection_c__pyext because
+[1.603s]   files in some directories may conflict with libraries in implicit
+[1.603s]   directories:
+[1.603s] 
+[1.603s]     runtime library [libpython3.10.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+[1.603s]       /home/kkkk/miniconda3/envs/ikpy/lib
+[1.603s] 
+[1.603s]   Some of these libraries may not be found correctly.
+[1.603s] Call Stack (most recent call first):
+[1.604s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[1.604s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[1.604s]   CMakeLists.txt:17 (rosidl_generate_interfaces)
+[1.604s] 
+[1.604s] [0m
+[1.605s] [33mCMake Warning at /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:226 (add_library):
+[1.605s]   Cannot generate a safe runtime search path for target
+[1.605s]   aero_hand_open_msgs__rosidl_typesupport_c__pyext because files in some
+[1.605s]   directories may conflict with libraries in implicit directories:
+[1.605s] 
+[1.605s]     runtime library [libpython3.10.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+[1.605s]       /home/kkkk/miniconda3/envs/ikpy/lib
+[1.605s] 
+[1.605s]   Some of these libraries may not be found correctly.
+[1.605s] Call Stack (most recent call first):
+[1.605s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[1.605s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[1.605s]   CMakeLists.txt:17 (rosidl_generate_interfaces)
+[1.605s] 
+[1.605s] [0m
+[1.607s] -- Generating done
+[1.615s] -- Build files have been written to: /home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs
+[1.750s] Invoked command in '/home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake /home/kkkk/bxi_arm_v2/src/aero-hand-open/src/aero_hand_open_msgs -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_INSTALL_PREFIX=/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs
+[1.751s] Invoking command in '/home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --build /home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs -- -j16 -l16
+[1.890s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.919s] [  3%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.949s] [  3%] Built target ament_cmake_python_copy_aero_hand_open_msgs
+[2.313s] running egg_info
+[2.331s] creating aero_hand_open_msgs.egg-info
+[2.332s] writing aero_hand_open_msgs.egg-info/PKG-INFO
+[2.333s] writing dependency_links to aero_hand_open_msgs.egg-info/dependency_links.txt
+[2.334s] writing top-level names to aero_hand_open_msgs.egg-info/top_level.txt
+[2.334s] writing manifest file 'aero_hand_open_msgs.egg-info/SOURCES.txt'
+[2.404s] reading manifest file 'aero_hand_open_msgs.egg-info/SOURCES.txt'
+[2.406s] writing manifest file 'aero_hand_open_msgs.egg-info/SOURCES.txt'
+[2.567s] [  3%] Built target ament_cmake_python_build_aero_hand_open_msgs_egg
+[2.933s] [  5%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_generator_c.dir/rosidl_generator_c/aero_hand_open_msgs/msg/detail/joint_control__functions.c.o[0m
+[2.938s] [  7%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_generator_c.dir/rosidl_generator_c/aero_hand_open_msgs/msg/detail/actuator_control__functions.c.o[0m
+[2.948s] [  9%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_generator_c.dir/rosidl_generator_c/aero_hand_open_msgs/msg/detail/actuator_states__functions.c.o[0m
+[2.949s] [ 10%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_generator_c.dir/rosidl_generator_c/aero_hand_open_msgs/msg/detail/hand_mocap__functions.c.o[0m
+[2.963s] [ 10%] Built target aero_hand_open_msgs__cpp
+[2.982s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.999s] [ 14%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.999s] [ 16%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.218s] [ 18%] [32m[1mLinking C shared library libaero_hand_open_msgs__rosidl_generator_c.so[0m
+[3.326s] [ 18%] Built target aero_hand_open_msgs__rosidl_generator_c
+[3.362s] [ 20%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[3.372s] [ 21%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.382s] [ 23%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.634s] [ 25%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/aero_hand_open_msgs/msg/joint_control__type_support.cpp.o[0m
+[3.640s] [ 27%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/aero_hand_open_msgs/msg/hand_mocap__type_support.cpp.o[0m
+[3.640s] [ 29%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/aero_hand_open_msgs/msg/actuator_states__type_support.cpp.o[0m
+[3.645s] [ 30%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/aero_hand_open_msgs/msg/actuator_control__type_support.cpp.o[0m
+[3.812s] [ 32%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/aero_hand_open_msgs/msg/detail/dds_fastrtps/hand_mocap__type_support.cpp.o[0m
+[3.817s] [ 36%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/aero_hand_open_msgs/msg/detail/dds_fastrtps/actuator_control__type_support.cpp.o[0m
+[3.817s] [ 36%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/aero_hand_open_msgs/msg/detail/dds_fastrtps/joint_control__type_support.cpp.o[0m
+[3.819s] [ 38%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/aero_hand_open_msgs/msg/detail/dds_fastrtps/actuator_states__type_support.cpp.o[0m
+[4.009s] [ 40%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/aero_hand_open_msgs/msg/detail/joint_control__type_support.cpp.o[0m
+[4.012s] [ 43%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/aero_hand_open_msgs/msg/detail/actuator_states__type_support.cpp.o[0m
+[4.015s] [ 43%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/aero_hand_open_msgs/msg/detail/actuator_control__type_support.cpp.o[0m
+[4.015s] [ 45%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/aero_hand_open_msgs/msg/detail/hand_mocap__type_support.cpp.o[0m
+[4.070s] [ 47%] [32m[1mLinking CXX shared library libaero_hand_open_msgs__rosidl_typesupport_cpp.so[0m
+[4.148s] [ 49%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/aero_hand_open_msgs/msg/detail/joint_control__type_support.c.o[0m
+[4.152s] [ 50%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/aero_hand_open_msgs/msg/detail/actuator_control__type_support.c.o[0m
+[4.156s] [ 52%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/aero_hand_open_msgs/msg/detail/actuator_states__type_support.c.o[0m
+[4.160s] [ 54%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/aero_hand_open_msgs/msg/detail/hand_mocap__type_support.c.o[0m
+[4.229s] [ 56%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/aero_hand_open_msgs/msg/joint_control__type_support.cpp.o[0m
+[4.235s] [ 58%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/aero_hand_open_msgs/msg/actuator_control__type_support.cpp.o[0m
+[4.240s] [ 58%] Built target aero_hand_open_msgs__rosidl_typesupport_cpp
+[4.261s] [ 60%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/aero_hand_open_msgs/msg/detail/joint_control__type_support_c.cpp.o[0m
+[4.274s] [ 61%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/aero_hand_open_msgs/msg/actuator_states__type_support.cpp.o[0m
+[4.292s] [ 63%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/aero_hand_open_msgs/msg/hand_mocap__type_support.cpp.o[0m
+[4.300s] [ 65%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/aero_hand_open_msgs/msg/detail/actuator_states__type_support_c.cpp.o[0m
+[4.304s] [ 67%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/aero_hand_open_msgs/msg/detail/actuator_control__type_support_c.cpp.o[0m
+[4.318s] [ 69%] [32mBuilding CXX object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/aero_hand_open_msgs/msg/detail/hand_mocap__type_support_c.cpp.o[0m
+[4.330s] [ 70%] [32m[1mLinking C shared library libaero_hand_open_msgs__rosidl_typesupport_introspection_c.so[0m
+[4.380s] [ 72%] [32m[1mLinking CXX shared library libaero_hand_open_msgs__rosidl_typesupport_c.so[0m
+[4.448s] [ 72%] Built target aero_hand_open_msgs__rosidl_typesupport_introspection_c
+[4.536s] [ 72%] Built target aero_hand_open_msgs__rosidl_typesupport_c
+[4.709s] [ 74%] [32m[1mLinking CXX shared library libaero_hand_open_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[4.804s] [ 74%] Built target aero_hand_open_msgs__rosidl_typesupport_fastrtps_cpp
+[4.844s] [ 76%] [32m[1mLinking CXX shared library libaero_hand_open_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[4.851s] [ 78%] [32m[1mLinking CXX shared library libaero_hand_open_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[4.922s] [ 78%] Built target aero_hand_open_msgs__rosidl_typesupport_introspection_cpp
+[4.927s] [ 78%] Built target aero_hand_open_msgs__rosidl_typesupport_fastrtps_c
+[4.950s] [ 78%] Built target aero_hand_open_msgs
+[4.981s] [ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[5.513s] [ 80%] Built target aero_hand_open_msgs__py
+[5.538s] [ 81%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_generator_py.dir/rosidl_generator_py/aero_hand_open_msgs/msg/_joint_control_s.c.o[0m
+[5.541s] [ 87%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_generator_py.dir/rosidl_generator_py/aero_hand_open_msgs/msg/_actuator_states_s.c.o[0m
+[5.542s] [ 87%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_generator_py.dir/rosidl_generator_py/aero_hand_open_msgs/msg/_hand_mocap_s.c.o[0m
+[5.542s] [ 87%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_generator_py.dir/rosidl_generator_py/aero_hand_open_msgs/msg/_actuator_control_s.c.o[0m
+[5.753s] [ 89%] [32m[1mLinking C shared library rosidl_generator_py/aero_hand_open_msgs/libaero_hand_open_msgs__rosidl_generator_py.so[0m
+[5.803s] [ 89%] Built target aero_hand_open_msgs__rosidl_generator_py
+[5.825s] [ 90%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/aero_hand_open_msgs/_aero_hand_open_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[5.833s] [ 92%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/aero_hand_open_msgs/_aero_hand_open_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[5.833s] [ 94%] [32mBuilding C object CMakeFiles/aero_hand_open_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/aero_hand_open_msgs/_aero_hand_open_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[5.922s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[5.936s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[5.961s] [ 98%] Built target aero_hand_open_msgs__rosidl_typesupport_c__pyext
+[5.984s] [ 98%] Built target aero_hand_open_msgs__rosidl_typesupport_fastrtps_c__pyext
+[6.000s] [100%] [32m[1mLinking C shared library rosidl_generator_py/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[6.049s] [100%] Built target aero_hand_open_msgs__rosidl_typesupport_introspection_c__pyext
+[6.064s] Invoked command in '/home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --build /home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs -- -j16 -l16
+[6.078s] Invoking command in '/home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --install /home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs
+[6.089s] -- Install configuration: "Release"
+[6.089s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/ament_index/resource_index/rosidl_interfaces/aero_hand_open_msgs
+[6.089s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs
+[6.089s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg
+[6.089s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/joint_control.h
+[6.089s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/rosidl_generator_c__visibility_control.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/hand_mocap.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/actuator_states.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/actuator_control.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__struct.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__type_support.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__functions.c
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__functions.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__functions.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__type_support.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__type_support.h
+[6.090s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__functions.h
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__functions.h
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__functions.c
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__type_support.h
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__struct.h
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__functions.c
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__functions.c
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__struct.h
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__struct.h
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/environment/library_path.sh
+[6.091s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/environment/library_path.dsv
+[6.092s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_generator_c.so
+[6.092s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_generator_c.so" to ""
+[6.092s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs
+[6.092s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg
+[6.092s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[6.092s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail
+[6.092s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__rosidl_typesupport_fastrtps_c.h
+[6.093s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__rosidl_typesupport_fastrtps_c.h
+[6.093s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__rosidl_typesupport_fastrtps_c.h
+[6.093s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__rosidl_typesupport_fastrtps_c.h
+[6.093s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_fastrtps_c.so
+[6.093s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[6.093s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs
+[6.093s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg
+[6.093s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/hand_mocap.hpp
+[6.093s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/joint_control.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/actuator_states.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/actuator_control.hpp
+[6.094s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__type_support.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__struct.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__struct.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__builder.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__struct.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__traits.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__builder.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__builder.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__struct.hpp
+[6.094s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__builder.hpp
+[6.095s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__type_support.hpp
+[6.095s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__type_support.hpp
+[6.095s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__traits.hpp
+[6.095s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__traits.hpp
+[6.095s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__type_support.hpp
+[6.095s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__traits.hpp
+[6.095s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs
+[6.095s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg
+[6.095s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[6.095s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail
+[6.095s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__rosidl_typesupport_fastrtps_cpp.hpp
+[6.096s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__rosidl_typesupport_fastrtps_cpp.hpp
+[6.096s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/dds_fastrtps
+[6.096s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__rosidl_typesupport_fastrtps_cpp.hpp
+[6.096s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__rosidl_typesupport_fastrtps_cpp.hpp
+[6.096s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_fastrtps_cpp.so
+[6.096s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[6.096s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs
+[6.096s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg
+[6.096s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[6.096s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail
+[6.096s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__rosidl_typesupport_introspection_c.h
+[6.097s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__type_support.c
+[6.097s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__type_support.c
+[6.097s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__type_support.c
+[6.097s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__rosidl_typesupport_introspection_c.h
+[6.097s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__type_support.c
+[6.097s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__rosidl_typesupport_introspection_c.h
+[6.097s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__rosidl_typesupport_introspection_c.h
+[6.097s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_introspection_c.so
+[6.097s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_introspection_c.so" to ""
+[6.097s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_c.so
+[6.098s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_c.so" to ""
+[6.098s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs
+[6.098s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg
+[6.098s] -- Up-to-date: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail
+[6.098s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__rosidl_typesupport_introspection_cpp.hpp
+[6.098s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__rosidl_typesupport_introspection_cpp.hpp
+[6.098s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_control__type_support.cpp
+[6.098s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/hand_mocap__type_support.cpp
+[6.098s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__type_support.cpp
+[6.098s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__rosidl_typesupport_introspection_cpp.hpp
+[6.098s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/actuator_states__rosidl_typesupport_introspection_cpp.hpp
+[6.098s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/include/aero_hand_open_msgs/aero_hand_open_msgs/msg/detail/joint_control__type_support.cpp
+[6.099s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_introspection_cpp.so
+[6.099s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[6.099s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_cpp.so
+[6.099s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_typesupport_cpp.so" to ""
+[6.099s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/environment/pythonpath.sh
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/environment/pythonpath.dsv
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs-0.0.0-py3.10.egg-info
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[6.100s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/_aero_hand_open_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/_aero_hand_open_msgs_s.ep.rosidl_typesupport_c.c
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_joint_control_s.c
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_actuator_states_s.c
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_joint_control.py
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_actuator_control_s.c
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_hand_mocap_s.c
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_hand_mocap.py
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/__init__.py
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_actuator_control.py
+[6.101s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_actuator_states.py
+[6.102s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/libaero_hand_open_msgs__rosidl_generator_py.so
+[6.102s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/__init__.py
+[6.102s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/_aero_hand_open_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[6.102s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[6.134s] Listing '/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs'...
+[6.134s] Compiling '/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/__init__.py'...
+[6.134s] Listing '/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg'...
+[6.134s] Compiling '/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/__init__.py'...
+[6.134s] Compiling '/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_actuator_control.py'...
+[6.134s] Compiling '/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_actuator_states.py'...
+[6.134s] Compiling '/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_hand_mocap.py'...
+[6.134s] Compiling '/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/msg/_joint_control.py'...
+[6.138s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[6.138s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[6.138s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[6.138s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[6.138s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[6.139s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/python3.10/site-packages/aero_hand_open_msgs/aero_hand_open_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[6.139s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_generator_py.so
+[6.139s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/lib/libaero_hand_open_msgs__rosidl_generator_py.so" to ""
+[6.139s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/msg/JointControl.idl
+[6.139s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/msg/ActuatorControl.idl
+[6.140s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/msg/ActuatorStates.idl
+[6.140s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/msg/HandMocap.idl
+[6.140s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/msg/JointControl.msg
+[6.140s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/msg/ActuatorControl.msg
+[6.140s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/msg/ActuatorStates.msg
+[6.140s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/msg/HandMocap.msg
+[6.140s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/ament_index/resource_index/package_run_dependencies/aero_hand_open_msgs
+[6.140s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/ament_index/resource_index/parent_prefix_path/aero_hand_open_msgs
+[6.141s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/environment/ament_prefix_path.sh
+[6.141s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/environment/ament_prefix_path.dsv
+[6.141s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/environment/path.sh
+[6.141s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/environment/path.dsv
+[6.141s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/local_setup.bash
+[6.141s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/local_setup.sh
+[6.141s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/local_setup.zsh
+[6.141s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/local_setup.dsv
+[6.141s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/package.dsv
+[6.142s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/ament_index/resource_index/packages/aero_hand_open_msgs
+[6.142s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/export_aero_hand_open_msgs__rosidl_generator_cExport.cmake
+[6.142s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/export_aero_hand_open_msgs__rosidl_generator_cExport-release.cmake
+[6.142s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/export_aero_hand_open_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[6.142s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/export_aero_hand_open_msgs__rosidl_typesupport_fastrtps_cExport-release.cmake
+[6.142s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/export_aero_hand_open_msgs__rosidl_generator_cppExport.cmake
+[6.142s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/export_aero_hand_open_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[6.142s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/export_aero_hand_open_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
+[6.142s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgs__rosidl_typesupport_introspection_cExport.cmake
+[6.143s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgs__rosidl_typesupport_introspection_cExport-release.cmake
+[6.143s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgs__rosidl_typesupport_cExport.cmake
+[6.143s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgs__rosidl_typesupport_cExport-release.cmake
+[6.143s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[6.143s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgs__rosidl_typesupport_introspection_cppExport-release.cmake
+[6.143s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgs__rosidl_typesupport_cppExport.cmake
+[6.143s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgs__rosidl_typesupport_cppExport-release.cmake
+[6.143s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/export_aero_hand_open_msgs__rosidl_generator_pyExport.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/export_aero_hand_open_msgs__rosidl_generator_pyExport-release.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/rosidl_cmake-extras.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgsConfig.cmake
+[6.144s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/cmake/aero_hand_open_msgsConfig-version.cmake
+[6.145s] -- Installing: /home/kkkk/bxi_arm_v2/install/aero_hand_open_msgs/share/aero_hand_open_msgs/package.xml
+[6.148s] Invoked command in '/home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --install /home/kkkk/bxi_arm_v2/build/aero_hand_open_msgs

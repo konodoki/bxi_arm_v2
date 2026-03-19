@@ -1,0 +1,29 @@
+running egg_info
+writing ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/PKG-INFO
+writing dependency_links to ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/dependency_links.txt
+writing entry points to ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/entry_points.txt
+writing requirements to ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/requires.txt
+writing top-level names to ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/top_level.txt
+reading manifest file '../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/SOURCES.txt'
+writing manifest file '../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info/SOURCES.txt'
+running build
+running build_py
+copying elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+copying elf3_arm_ikpy_control_pico/sphere_leastlq.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+copying elf3_arm_ikpy_control_pico/pico_hand.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+copying elf3_arm_ikpy_control_pico/__init__.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+copying elf3_arm_ikpy_control_pico/filter.py -> /home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/build/lib/elf3_arm_ikpy_control_pico
+running install
+running install_lib
+running install_data
+copying resource/elf3_arm_ikpy_control_pico -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/share/ament_index/resource_index/packages
+copying package.xml -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/share/elf3_arm_ikpy_control_pico
+copying elf3_arm_ikpy_control_pico/sphere_leastlq.py -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/elf3_arm_ikpy_control_pico
+copying elf3_arm_ikpy_control_pico/filter.py -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/elf3_arm_ikpy_control_pico
+copying elf3_arm_ikpy_control_pico/pico_hand.py -> /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/elf3_arm_ikpy_control_pico
+running install_egg_info
+removing '/home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/python3.10/site-packages/elf3_arm_ikpy_control_pico-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/elf3_arm_ikpy_control_pico/elf3_arm_ikpy_control_pico.egg-info to /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/python3.10/site-packages/elf3_arm_ikpy_control_pico-0.0.0-py3.10.egg-info
+running install_scripts
+Installing elf3_arm_ikpy_control_pico script to /home/kkkk/bxi_arm_v2/install/elf3_arm_ikpy_control_pico/lib/elf3_arm_ikpy_control_pico
+writing list of installed files to '/home/kkkk/bxi_arm_v2/build/elf3_arm_ikpy_control_pico/install.log'

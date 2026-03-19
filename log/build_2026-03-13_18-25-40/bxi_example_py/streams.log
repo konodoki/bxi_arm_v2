@@ -1,0 +1,23 @@
+[2.600s] Invoking command in '/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/bxi_example_py': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/bxi_example_py/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/bxi_example_py/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/bxi_example_py build --build-base /home/kkkk/bxi_arm_v2/build/bxi_example_py/build install --record /home/kkkk/bxi_arm_v2/build/bxi_example_py/install.log --single-version-externally-managed install_data
+[2.814s] /home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[2.814s]   warnings.warn(msg)
+[3.042s] running egg_info
+[3.064s] writing ../../../../build/bxi_example_py/bxi_example_py.egg-info/PKG-INFO
+[3.064s] writing dependency_links to ../../../../build/bxi_example_py/bxi_example_py.egg-info/dependency_links.txt
+[3.064s] writing entry points to ../../../../build/bxi_example_py/bxi_example_py.egg-info/entry_points.txt
+[3.065s] writing requirements to ../../../../build/bxi_example_py/bxi_example_py.egg-info/requires.txt
+[3.066s] writing top-level names to ../../../../build/bxi_example_py/bxi_example_py.egg-info/top_level.txt
+[3.148s] reading manifest file '../../../../build/bxi_example_py/bxi_example_py.egg-info/SOURCES.txt'
+[3.148s] writing manifest file '../../../../build/bxi_example_py/bxi_example_py.egg-info/SOURCES.txt'
+[3.149s] running build
+[3.149s] running build_py
+[3.150s] running install
+[3.156s] running install_lib
+[3.179s] running install_data
+[3.180s] running install_egg_info
+[3.199s] removing '/home/kkkk/bxi_arm_v2/install/bxi_example_py/lib/python3.10/site-packages/bxi_example_py-0.0.0-py3.10.egg-info' (and everything under it)
+[3.199s] Copying ../../../../build/bxi_example_py/bxi_example_py.egg-info to /home/kkkk/bxi_arm_v2/install/bxi_example_py/lib/python3.10/site-packages/bxi_example_py-0.0.0-py3.10.egg-info
+[3.200s] running install_scripts
+[3.279s] Installing bxi_example_py script to /home/kkkk/bxi_arm_v2/install/bxi_example_py/lib/bxi_example_py
+[3.279s] writing list of installed files to '/home/kkkk/bxi_arm_v2/build/bxi_example_py/install.log'
+[3.313s] Invoked command in '/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/bxi_example_py' returned '0': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/bxi_example_py/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/bxi_example_py/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/bxi_example_py build --build-base /home/kkkk/bxi_arm_v2/build/bxi_example_py/build install --record /home/kkkk/bxi_arm_v2/build/bxi_example_py/install.log --single-version-externally-managed install_data

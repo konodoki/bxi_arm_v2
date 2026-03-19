@@ -1,0 +1,142 @@
+/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running egg_info
+creating ../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info
+writing ../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info/PKG-INFO
+writing dependency_links to ../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info/dependency_links.txt
+writing entry points to ../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info/entry_points.txt
+writing requirements to ../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info/requires.txt
+writing top-level names to ../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info/top_level.txt
+writing manifest file '../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info/SOURCES.txt'
+reading manifest file '../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info/SOURCES.txt'
+writing manifest file '../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3
+copying bxi_example_py_elf3/bxi_example_run.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3
+copying bxi_example_py_elf3/bxi_example_mjlab.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3
+copying bxi_example_py_elf3/bxi_example_demo.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3
+copying bxi_example_py_elf3/__init__.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3
+creating /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/inference
+copying bxi_example_py_elf3/inference/host.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/inference
+copying bxi_example_py_elf3/inference/beyondmimic.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/inference
+copying bxi_example_py_elf3/inference/run.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/inference
+copying bxi_example_py_elf3/inference/__init__.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/inference
+creating /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/utils
+copying bxi_example_py_elf3/utils/tfs.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/utils
+copying bxi_example_py_elf3/utils/__init__.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/utils
+running install
+running install_lib
+creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/bxi_example_run.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/bxi_example_mjlab.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3
+creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/inference
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/inference/host.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/inference
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/inference/beyondmimic.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/inference
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/inference/run.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/inference
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/inference/__init__.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/inference
+creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/utils
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/utils/tfs.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/utils
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/utils/__init__.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/utils
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/bxi_example_demo.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3
+copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/build/lib/bxi_example_py_elf3/__init__.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/bxi_example_run.py to bxi_example_run.cpython-310.pyc
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/bxi_example_mjlab.py to bxi_example_mjlab.cpython-310.pyc
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/inference/host.py to host.cpython-310.pyc
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/inference/beyondmimic.py to beyondmimic.cpython-310.pyc
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/inference/run.py to run.cpython-310.pyc
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/inference/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/utils/tfs.py to tfs.cpython-310.pyc
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/utils/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/bxi_example_demo.py to bxi_example_demo.cpython-310.pyc
+byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/ament_index/resource_index/packages
+copying resource/bxi_example_py_elf3 -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/ament_index/resource_index/packages
+copying package.xml -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3
+creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data
+copying data/elf3_ground.onnx -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data
+copying data/ydd.npz -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data
+copying data/ydd.onnx -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data
+copying data/model_run.onnx -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data
+copying data/elf3.xml -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data
+copying data/model_mjlab.onnx -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data
+copying data/model_mjlab.onnx.rough -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data
+copying data/elf3 copy.xml -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data
+creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_shoulder_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_wrist_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/torso_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_knee_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_elbow_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_ankle_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_ankle_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_wrist_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_ankle_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_wrist_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_wrist_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_knee_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/waist_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_shoulder_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_hip_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_shoulder_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_hip_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_shoulder_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_ankle_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_hip_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_elbow_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/waist_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_hip_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_hip_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_wrist_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/waist_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_shoulder_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_hip_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/r_wrist_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+copying data/meshes/l_shoulder_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshes
+creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_shoulder_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_wrist_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/torso_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_knee_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_elbow_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_ankle_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_ankle_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_wrist_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_ankle_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_wrist_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_wrist_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_knee_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/waist_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_shoulder_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_hip_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_shoulder_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_hip_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_shoulder_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_ankle_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_hip_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_elbow_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/waist_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_hip_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_hip_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_wrist_x_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/waist_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_shoulder_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_hip_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/r_wrist_y_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+copying data/meshesback/l_shoulder_z_link.STL -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/meshesback
+creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/launch
+copying launch/example_launch_run.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/launch
+copying launch/example_launch_mjlab_hw.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/launch
+copying launch/MUJOCO_LOG.TXT -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/launch
+copying launch/example_launch_demo.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/launch
+copying launch/example_launch_run_hw.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/launch
+copying launch/example_launch_mjlab.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/share/bxi_example_py_elf3/launch
+running install_egg_info
+Copying ../../../../build/bxi_example_py_elf3/bxi_example_py_elf3.egg-info to /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/python3.10/site-packages/bxi_example_py_elf3-0.0.0-py3.10.egg-info
+running install_scripts
+Installing bxi_example_py_elf3_dance script to /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/bxi_example_py_elf3
+Installing bxi_example_py_elf3_demo script to /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/bxi_example_py_elf3
+Installing bxi_example_py_elf3_mjlab script to /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/bxi_example_py_elf3
+Installing bxi_example_py_elf3_run script to /home/kkkk/bxi_arm_v2/install/bxi_example_py_elf3/lib/bxi_example_py_elf3
+writing list of installed files to '/home/kkkk/bxi_arm_v2/build/bxi_example_py_elf3/install.log'

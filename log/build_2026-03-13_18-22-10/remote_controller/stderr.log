@@ -1,0 +1,37 @@
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:[m[K In member function ‘[01m[Kvoid COMPublisher::js_loop()[m[K’:
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:229:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  229 |                             [01;35m[Ksystem("killall -SIGINT robot_controller")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:230:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  230 |                             [01;35m[Ksystem("killall -SIGINT pt_main_thread")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:231:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  231 |                             [01;35m[Ksystem("killall -SIGINT bxi_example_py")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:232:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  232 |                             [01;35m[Ksystem("killall -SIGINT bxi_example_py_trunk")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:233:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  233 |                             [01;35m[Ksystem("killall -SIGINT bxi_example_py_ankle")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:234:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  234 |                             [01;35m[Ksystem("killall -SIGINT bxi_example_py_foot")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:235:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  235 |                             [01;35m[Ksystem("killall -SIGINT hardware")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:236:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  236 |                             [01;35m[Ksystem("killall -SIGINT hardware_trunk")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:237:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  237 |                             [01;35m[Ksystem("killall -SIGINT hardware_trunk_neck")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:238:35:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  238 |                             [01;35m[Ksystem("killall -SIGINT hardware_ankle")[m[K;
+      |                             [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:248:39:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  248 |                                 [01;35m[Ksystem("mkdir -p /var/log/bxi_log")[m[K;
+      |                                 [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/remote_controller/src/main.cpp:249:39:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’ declared with attribute ‘[01m[Kwarn_unused_result[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-result-Wunused-result]8;;[m[K]
+  249 |                                 [01;35m[Ksystem("ros2 launch bxi_example_py_elf3 example_launch_demo.py > /var/log/bxi_log/$(date +%Y-%m-%d_%H-%M-%S)_elf.log  2>&1 &")[m[K;
+      |                                 [01;35m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K

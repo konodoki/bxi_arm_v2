@@ -1,0 +1,67 @@
+[0.194s] Invoking command in '/home/kkkk/bxi_arm_v2/build/bxi_example_arm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake /home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/bxi_example_arm -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_INSTALL_PREFIX=/home/kkkk/bxi_arm_v2/install/bxi_example_arm
+[1.559s] -- The C compiler identification is GNU 11.4.0
+[1.559s] -- The CXX compiler identification is GNU 11.4.0
+[1.559s] -- Detecting C compiler ABI info
+[1.559s] -- Detecting C compiler ABI info - done
+[1.559s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.559s] -- Detecting C compile features
+[1.559s] -- Detecting C compile features - done
+[1.559s] -- Detecting CXX compiler ABI info
+[1.559s] -- Detecting CXX compiler ABI info - done
+[1.559s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.559s] -- Detecting CXX compile features
+[1.559s] -- Detecting CXX compile features - done
+[1.559s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.559s] -- Found Python3: /home/kkkk/miniconda3/envs/ikpy/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.559s] -- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)
+[1.559s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.559s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.559s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.559s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.560s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.560s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.560s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.560s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.560s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.560s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.560s] -- Looking for pthread.h
+[1.560s] -- Looking for pthread.h - found
+[1.560s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.560s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.560s] -- Found Threads: TRUE  
+[1.560s] -- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.560s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.560s] -- Found communication: 0.0.0 (/home/kkkk/bxi_ros2_pkg/share/communication/cmake)
+[1.560s] -- Configuring done
+[1.560s] -- Generating done
+[1.560s] -- Build files have been written to: /home/kkkk/bxi_arm_v2/build/bxi_example_arm
+[1.561s] Invoked command in '/home/kkkk/bxi_arm_v2/build/bxi_example_arm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake /home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/bxi_example_arm -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_INSTALL_PREFIX=/home/kkkk/bxi_arm_v2/install/bxi_example_arm
+[1.562s] Invoking command in '/home/kkkk/bxi_arm_v2/build/bxi_example_arm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --build /home/kkkk/bxi_arm_v2/build/bxi_example_arm -- -j16 -l16
+[1.685s] [ 33%] [32mBuilding CXX object CMakeFiles/bxi_example_arm.dir/src/main.cpp.o[0m
+[1.686s] [ 66%] [32mBuilding CXX object CMakeFiles/bxi_example_arm.dir/src/control/RobotController.cpp.o[0m
+[16.750s] [100%] [32m[1mLinking CXX executable bxi_example_arm[0m
+[16.912s] [100%] Built target bxi_example_arm
+[16.921s] Invoked command in '/home/kkkk/bxi_arm_v2/build/bxi_example_arm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --build /home/kkkk/bxi_arm_v2/build/bxi_example_arm -- -j16 -l16
+[16.921s] Invoking command in '/home/kkkk/bxi_arm_v2/build/bxi_example_arm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --install /home/kkkk/bxi_arm_v2/build/bxi_example_arm
+[16.928s] -- Install configuration: "Release"
+[16.928s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/lib/bxi_example_arm/bxi_example_arm
+[16.929s] -- Set runtime path of "/home/kkkk/bxi_arm_v2/install/bxi_example_arm/lib/bxi_example_arm/bxi_example_arm" to ""
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/launch
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/launch/example_launch.py
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/launch/example_launch_hw.py
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/ament_index/resource_index/package_run_dependencies/bxi_example_arm
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/ament_index/resource_index/parent_prefix_path/bxi_example_arm
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/environment/ament_prefix_path.sh
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/environment/ament_prefix_path.dsv
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/environment/path.sh
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/environment/path.dsv
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/local_setup.bash
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/local_setup.sh
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/local_setup.zsh
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/local_setup.dsv
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/package.dsv
+[16.929s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/ament_index/resource_index/packages/bxi_example_arm
+[16.930s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/cmake/bxi_example_armConfig.cmake
+[16.930s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/cmake/bxi_example_armConfig-version.cmake
+[16.930s] -- Installing: /home/kkkk/bxi_arm_v2/install/bxi_example_arm/share/bxi_example_arm/package.xml
+[16.934s] Invoked command in '/home/kkkk/bxi_arm_v2/build/bxi_example_arm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kkkk/moveit2/install/moveit_configs_utils:/home/kkkk/moveit2/install/launch_param_builder:/opt/ros/humble CONDA_PROMPT_MODIFIER=(ikpy) /usr/bin/cmake --install /home/kkkk/bxi_arm_v2/build/bxi_example_arm

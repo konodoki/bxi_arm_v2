@@ -1,0 +1,44 @@
+/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+running egg_info
+writing ../../../../build/aero_hand_open_teleop/aero_hand_open_teleop.egg-info/PKG-INFO
+writing dependency_links to ../../../../build/aero_hand_open_teleop/aero_hand_open_teleop.egg-info/dependency_links.txt
+writing entry points to ../../../../build/aero_hand_open_teleop/aero_hand_open_teleop.egg-info/entry_points.txt
+writing requirements to ../../../../build/aero_hand_open_teleop/aero_hand_open_teleop.egg-info/requires.txt
+writing top-level names to ../../../../build/aero_hand_open_teleop/aero_hand_open_teleop.egg-info/top_level.txt
+reading manifest file '../../../../build/aero_hand_open_teleop/aero_hand_open_teleop.egg-info/SOURCES.txt'
+writing manifest file '../../../../build/aero_hand_open_teleop/aero_hand_open_teleop.egg-info/SOURCES.txt'
+running build
+running build_py
+copying aero_hand_open_teleop/mediapipe_mocap.py -> /home/kkkk/bxi_arm_v2/build/aero_hand_open_teleop/build/lib/aero_hand_open_teleop
+copying aero_hand_open_teleop/manus_joint_states_retargeting.py -> /home/kkkk/bxi_arm_v2/build/aero_hand_open_teleop/build/lib/aero_hand_open_teleop
+copying aero_hand_open_teleop/mediapipe_retargeting.py -> /home/kkkk/bxi_arm_v2/build/aero_hand_open_teleop/build/lib/aero_hand_open_teleop
+copying aero_hand_open_teleop/__init__.py -> /home/kkkk/bxi_arm_v2/build/aero_hand_open_teleop/build/lib/aero_hand_open_teleop
+copying aero_hand_open_teleop/utils/load_normalize_config.py -> /home/kkkk/bxi_arm_v2/build/aero_hand_open_teleop/build/lib/aero_hand_open_teleop/utils
+copying aero_hand_open_teleop/utils/normalize.py -> /home/kkkk/bxi_arm_v2/build/aero_hand_open_teleop/build/lib/aero_hand_open_teleop/utils
+running install
+running install_lib
+running install_data
+copying package.xml -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/share/aero_hand_open_teleop
+copying launch/manus_teleop.launch.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/share/aero_hand_open_teleop/launch
+copying config/normalize_default_user.yaml -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/share/aero_hand_open_teleop/config
+copying ../aero_open_sdk/__main__.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk
+copying ../aero_open_sdk/aero_hand_constants.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk
+copying ../aero_open_sdk/gui.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk
+copying ../aero_open_sdk/joints_to_actuations.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk
+copying ../aero_open_sdk/aero_hand.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk
+copying ../aero_open_sdk/actuations_to_joints.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk
+copying ../aero_open_sdk/__init__.py -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk
+copying ../aero_open_sdk/__pycache__/aero_hand.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk/__pycache__
+copying ../aero_open_sdk/__pycache__/actuations_to_joints.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk/__pycache__
+copying ../aero_open_sdk/__pycache__/joints_to_actuations.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk/__pycache__
+copying ../aero_open_sdk/__pycache__/__init__.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk/__pycache__
+copying ../aero_open_sdk/__pycache__/aero_hand_constants.cpython-310.pyc -> /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop/aero_open_sdk/__pycache__
+running install_egg_info
+removing '/home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/python3.10/site-packages/aero_hand_open_teleop-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../../../build/aero_hand_open_teleop/aero_hand_open_teleop.egg-info to /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/python3.10/site-packages/aero_hand_open_teleop-0.0.0-py3.10.egg-info
+running install_scripts
+Installing manus_joint_states_retargeting script to /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop
+Installing mediapipe_mocap script to /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop
+Installing mediapipe_retargeting script to /home/kkkk/bxi_arm_v2/install/aero_hand_open_teleop/lib/aero_hand_open_teleop
+writing list of installed files to '/home/kkkk/bxi_arm_v2/build/aero_hand_open_teleop/install.log'

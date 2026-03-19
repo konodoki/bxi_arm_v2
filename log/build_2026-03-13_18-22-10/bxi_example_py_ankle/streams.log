@@ -1,0 +1,49 @@
+[2.430s] Invoking command in '/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/bxi_example_py_ankle': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/bxi_example_py_ankle build --build-base /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build install --record /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/install.log --single-version-externally-managed install_data
+[2.885s] /home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[2.885s]   warnings.warn(msg)
+[3.098s] running egg_info
+[3.133s] creating ../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info
+[3.133s] writing ../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info/PKG-INFO
+[3.134s] writing dependency_links to ../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info/dependency_links.txt
+[3.134s] writing entry points to ../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info/entry_points.txt
+[3.136s] writing requirements to ../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info/requires.txt
+[3.136s] writing top-level names to ../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info/top_level.txt
+[3.136s] writing manifest file '../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info/SOURCES.txt'
+[3.179s] reading manifest file '../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info/SOURCES.txt'
+[3.181s] writing manifest file '../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info/SOURCES.txt'
+[3.181s] running build
+[3.181s] running build_py
+[3.182s] creating /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle
+[3.184s] copying bxi_example_py_ankle/right_arm_handshake_controller.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle
+[3.184s] copying bxi_example_py_ankle/running_arm_controller.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle
+[3.184s] copying bxi_example_py_ankle/bxi_example.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle
+[3.184s] copying bxi_example_py_ankle/__init__.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle
+[3.184s] copying bxi_example_py_ankle/arm_motion_controller.py -> /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle
+[3.184s] running install
+[3.194s] running install_lib
+[3.209s] creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle
+[3.210s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle/right_arm_handshake_controller.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle
+[3.210s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle/running_arm_controller.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle
+[3.210s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle/bxi_example.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle
+[3.210s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle/__init__.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle
+[3.210s] copying /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build/lib/bxi_example_py_ankle/arm_motion_controller.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle
+[3.210s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle/right_arm_handshake_controller.py to right_arm_handshake_controller.cpython-310.pyc
+[3.213s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle/running_arm_controller.py to running_arm_controller.cpython-310.pyc
+[3.213s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle/bxi_example.py to bxi_example.cpython-310.pyc
+[3.219s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle/__init__.py to __init__.cpython-310.pyc
+[3.219s] byte-compiling /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle/arm_motion_controller.py to arm_motion_controller.cpython-310.pyc
+[3.219s] running install_data
+[3.221s] creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/share/ament_index/resource_index/packages
+[3.221s] copying resource/bxi_example_py_ankle -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/share/ament_index/resource_index/packages
+[3.221s] copying package.xml -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/share/bxi_example_py_ankle
+[3.221s] creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/share/bxi_example_py_ankle/launch
+[3.221s] copying launch/example_launch.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/share/bxi_example_py_ankle/launch
+[3.221s] copying launch/example_launch_hw.py -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/share/bxi_example_py_ankle/launch
+[3.221s] creating /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/share/bxi_example_py_ankle/policy
+[3.221s] copying policy/model.onnx -> /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/share/bxi_example_py_ankle/policy
+[3.229s] running install_egg_info
+[3.280s] Copying ../../../../build/bxi_example_py_ankle/bxi_example_py_ankle.egg-info to /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages/bxi_example_py_ankle-0.0.0-py3.10.egg-info
+[3.289s] running install_scripts
+[3.497s] Installing bxi_example_py_ankle script to /home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/bxi_example_py_ankle
+[3.501s] writing list of installed files to '/home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/install.log'
+[3.611s] Invoked command in '/home/kkkk/bxi_arm_v2/src/bxi_rl_controller_ros2_example/src/bxi_example_py_ankle' returned '0': CONDA_PROMPT_MODIFIER=(ikpy) PYTHONPATH=/home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/prefix_override:/home/kkkk/miniconda3/envs/ikpy/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/kkkk/bxi_arm_v2/install/bxi_example_py_ankle/lib/python3.10/site-packages:${PYTHONPATH} /home/kkkk/miniconda3/envs/ikpy/bin/python3.10 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/bxi_example_py_ankle build --build-base /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/build install --record /home/kkkk/bxi_arm_v2/build/bxi_example_py_ankle/install.log --single-version-externally-managed install_data

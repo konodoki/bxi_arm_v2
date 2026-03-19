@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/hand_control/hand_control.egg-info/PKG-INFO
+writing dependency_links to ../../build/hand_control/hand_control.egg-info/dependency_links.txt
+writing entry points to ../../build/hand_control/hand_control.egg-info/entry_points.txt
+writing requirements to ../../build/hand_control/hand_control.egg-info/requires.txt
+writing top-level names to ../../build/hand_control/hand_control.egg-info/top_level.txt
+reading manifest file '../../build/hand_control/hand_control.egg-info/SOURCES.txt'
+writing manifest file '../../build/hand_control/hand_control.egg-info/SOURCES.txt'
+running build
+running build_py
+copying hand_control/hand_control.py -> /home/kkkk/bxi_arm_v2/build/hand_control/build/lib/hand_control
+copying hand_control/__init__.py -> /home/kkkk/bxi_arm_v2/build/hand_control/build/lib/hand_control
+running install
+running install_lib
+running install_data
+copying resource/hand_control -> /home/kkkk/bxi_arm_v2/install/hand_control/share/ament_index/resource_index/packages
+copying package.xml -> /home/kkkk/bxi_arm_v2/install/hand_control/share/hand_control
+running install_egg_info
+removing '/home/kkkk/bxi_arm_v2/install/hand_control/lib/python3.10/site-packages/hand_control-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/hand_control/hand_control.egg-info to /home/kkkk/bxi_arm_v2/install/hand_control/lib/python3.10/site-packages/hand_control-0.0.0-py3.10.egg-info
+running install_scripts
+Installing hand_control script to /home/kkkk/bxi_arm_v2/install/hand_control/lib/hand_control
+writing list of installed files to '/home/kkkk/bxi_arm_v2/build/hand_control/install.log'
