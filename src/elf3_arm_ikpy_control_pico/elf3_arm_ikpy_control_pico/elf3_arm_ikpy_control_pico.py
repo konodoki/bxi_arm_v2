@@ -15,7 +15,7 @@ from filter import *
 from pico_hand import PicoHand
 import communication.msg as bxiMsg
 from rclpy.qos import QoSProfile, qos_profile_sensor_data
-
+from scipy.spatial.transform import Rotation as R
 # --- 常量配置 ---
 ROBOT_ARM_LENGTH = 0.6
 JOINT_NAMES = [
@@ -173,30 +173,61 @@ def run_pico_logic(node, stop_event):
         left_pico, right_pico, head_pico, ROBOT_ARM_LENGTH, stop_event
     )
 
+    p_offset = np.array([0.1, 0.0, 0.0]) # 头部到躯干的偏置
     while rclpy.ok() and not stop_event.is_set():
         h_cur = head_pico.get_pos()
-        node.head_ori = head_pico.get_quaternion()
-        node.joy_data = list(left_pico.get_joy()+right_pico.get_joy())
+        # 获取头显四元数 (WXYZ)
+        h_w, h_x, h_y, h_z = head_pico.get_quaternion()
+        node.head_ori = [h_w, h_x, h_y, h_z]
+        
+        # 构造头显的旋转对象
+        # 注意：scipy 默认输入顺序是 XYZW，所以我们要调整一下
+        r_head = R.from_quat([h_x, h_y, h_z, h_w])
+        r_head_inv = r_head.inv()
+
+        node.joy_data = list(left_pico.get_joy() + right_pico.get_joy())
+
         # 处理左手
         l_cur = left_pico.get_pos()
         _, l_g = left_pico.get_button_values()
         if l_g > 0.5:
-            l_pos = (np.array(l_cur) - np.array([h_cur[0]+0.1, h_cur[1], h_cur[2]]) - l_arm_ori) * l_k
-            l_w, l_x, l_y, l_z = left_pico.get_quaternion()
-            l_ori = node.quat_to_matrix(l_w, l_x, l_y, l_z)
+            # 1. 位置偏移：将全局位置转为相对于头部的局部位置
+            # 先减去头部位置，再通过头部旋转的逆矩阵进行旋转对齐
+            l_rel_pos = np.array(l_cur) - (np.array(h_cur) + p_offset)
+            l_pos_local = r_head_inv.apply(l_rel_pos) # 这一步让手的位置随头转动
+            
+            # 映射到机器人手臂坐标系
+            l_pos = (l_pos_local - l_arm_ori) * l_k
+
+            # 2. 姿态转换
+            lw, lx, ly, lz = left_pico.get_quaternion()
+            r_l_hand = R.from_quat([lx, ly, lz, lw])
+            # 计算相对于头的局部旋转: q_local = q_head^-1 * q_hand
+            r_l_local = r_head_inv * r_l_hand
+            
+            # 转换为矩阵供 IK 使用
+            l_ori = r_l_local.as_matrix()
+
             l_ang = left_hand_filter.filter(node.solve_ik('l', l_pos, l_ori))
-            # l_ang = node.solve_ik('l', l_pos, l_ori)
             node.ik_result[0:7] = l_ang[1:].tolist()
 
         # 处理右手
         r_cur = right_pico.get_pos()
         _, r_g = right_pico.get_button_values()
         if r_g > 0.5:
-            r_pos = (np.array(r_cur) - np.array([h_cur[0]+0.1, h_cur[1], h_cur[2]]) - r_arm_ori) * r_k
-            r_w, r_x, r_y, r_z = right_pico.get_quaternion()
-            r_ori = node.quat_to_matrix(r_w, r_x, r_y, r_z)
+            # 1. 位置偏移同步旋转
+            r_rel_pos = np.array(r_cur) - (np.array(h_cur) + p_offset)
+            r_pos_local = r_head_inv.apply(r_rel_pos)
+            r_pos = (r_pos_local - r_arm_ori) * r_k
+
+            # 2. 姿态转换
+            rw, rx, ry, rz = right_pico.get_quaternion()
+            r_r_hand = R.from_quat([rx, ry, rz, rw])
+            r_r_local = r_head_inv * r_r_hand
+            
+            r_ori = r_r_local.as_matrix()
+
             r_ang = right_hand_filter.filter(node.solve_ik('r', r_pos, r_ori))
-            # r_ang = node.solve_ik('r', r_pos, r_ori)
             node.ik_result[7:] = r_ang[1:].tolist()
 
 def main():
