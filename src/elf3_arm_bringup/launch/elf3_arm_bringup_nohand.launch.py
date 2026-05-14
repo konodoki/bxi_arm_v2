@@ -20,14 +20,15 @@ def generate_launch_description():
                 package="elf3_arm_ikpy_control_pico",
                 executable="elf3_arm_ikpy_control_pico",
                 output="screen",
+                emulate_tty=True,
             ),
                 
-            Node(
-                package="hand_control",
-                executable="hand_control",
-                name="hand_control",
-                output="screen",
-            ),       
+            # Node(
+            #     package="hand_control",
+            #     executable="hand_control",
+            #     name="hand_control",
+            #     output="screen",
+            # ),       
              
             # Node(
             #     package="aero_hand_open",

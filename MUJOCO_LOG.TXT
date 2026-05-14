@@ -49,3 +49,18 @@ WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Ti
 Sun Feb  1 16:27:56 2026
 WARNING: Nan, Inf or huge value in QACC at DOF 6. The simulation is unstable. Time = 926.0700.
 
+Thu May 14 17:49:36 2026
+WARNING: Could not find decoder for resource '__log_level:=debug'
+
+Thu May 14 17:54:05 2026
+WARNING: Could not find decoder for resource '__log_level:=debug'
+
+Thu May 14 17:54:51 2026
+WARNING: Could not find decoder for resource '__log_level:=debug'
+
+Thu May 14 18:00:53 2026
+WARNING: Could not find decoder for resource '__log_level:=debug'
+
+Thu May 14 18:10:53 2026
+WARNING: Could not find decoder for resource '__log_level:=debug'
+

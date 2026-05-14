@@ -18,15 +18,21 @@ src/
 # 运行demo
 ## 运行前先测试图传服务
 
-运行push_rtsp.sh脚本启动图传服务。可自行更改其中的/dev/video4为你自己的摄像头。
-
 将BxiPicoApp-release.apk安装至pico4 ultra。
 
-保证pico4和电脑处于同一局域网。程序会不间断扫描局域网内的2212端口，并将有可能为rtsp服务器的ip列出来，只需点击ip即可连接至图传服务接入画面
+```
+#运行图传服务
+ros2 launch elf3_arm_bringup elf3_arm_bringup_nohand.launch.py
+#出现以下输出代表摄像头打开成功
+#[pico_bxi_server-1] 2026/05/14 17:22:02 INF [RTSP] [session de574919] is publishing to path 'video', 1 track (H264)
+#若未出现检查摄像头是否插在usb3.0的口上，即蓝色的口。或者输入sudo chmod 777 /dev/video4 赋予权限试试
+```
 
-若能接受到画面则将src/pico_bxi_server/src/pico_bxi_server.cpp:125行的dev/video4同步修改成你的摄像头并编译
+保证pico4和电脑处于同一局域网。程序会不间断扫描局域网内的2212端口，并将有可能为rtsp服务器的ip列出来，只需用手柄点击ip即可连接至图传服务接入画面
 
-## 连接灵巧手并测试
+若想将画面关闭，则按下右手手柄A键进入透传
+
+<!-- ## 连接灵巧手并测试
 
 若为usb连接则将src/elf3_arm_bringup/launch/elf3_arm_bringup.launch.py改为如下
 ```
@@ -48,16 +54,42 @@ ros2 run aero_hand_open aero_hand_node --ros-args -p left_port:="" -p right_port
 #启动动作控制
 ros2 run hand_control hand_control
 #启动虚拟扳机
-ros2 run fake_trigger fake_trigger
+ros2 run fake_trigger fake_trigger -->
+
+## 启动仿真
+
+```
+ros2 launch remote_controller remote_controller.launch.py #启动遥控器
+ros2 launch elf3_arm_bringup elf3_arm_bringup_nohand.launch.py #启动手臂控制
+ros2 launch bxi_example_py_elf3 example_demo.launch.py #启动机器人
+#注意此时千万不要按遥控器上的启动按键，因为机器人已经通过命令启动了。正常操作即可
 ```
 
-## 启动demo
+## 启动真机
+
 ```
 sudo su #只有进root下才能操控机器人
-ros2 launch bxi_example_py_elf3 example_launch_mjlab_hw.py #启动机器人
-ros2 launch elf3_arm_bringup elf3_arm_bringup.launch.py #启动手臂控制
+ros2 launch remote_controller remote_controller.launch.py #启动遥控器
+ros2 launch elf3_arm_bringup elf3_arm_bringup_nohand.launch.py #启动手臂控制
+ros2 launch bxi_example_py_elf3 example_demo_hw.launch.py #启动机器人
+#注意此时千万不要按遥控器上的启动按键，因为机器人已经通过命令启动了。正常操作即可
 ```
 
+## 校准pico
+
+将双手举过头顶，elf3_arm_ikpy_control_pico节点会提示开始校准
+
+随后双手以两肩关节为圆心手臂伸直比划，尽量让手柄画出一个完整球面
+
+elf3_arm_ikpy_control_pico节点显示校准成功则可进行下一步
+
+## 操作
+
+先使用遥控器正常让机器人进入normal站立状态
+
+然后按下RT+A机器人进入遥操状态
+
+此时操作手握紧pico手柄上的抓握按键则遥操接入
 
 <!-- # 各子目录详细介绍
 ## pico_bxi_server

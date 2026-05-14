@@ -45,7 +45,7 @@ class RobotControlNode(Node):
         self.create_subscription(sensor_msgs.msg.JointState,'pico_control_joint_states',self.joint_callback,qos)
         self.joint_pub = self.create_publisher(sensor_msgs.msg.JointState, 'pico_control_joint_commands', qos)
         self.head_pub = self.create_publisher(geometry_msgs.msg.Vector3, 'pico_control_head', qos)
-        self.joy_pub = self.create_publisher(bxiMsg.MotionCommands, 'motion_commands', qos)
+        self.joy_pub = self.create_publisher(bxiMsg.MotionCommands, 'pico_motion_commands', qos)
         self.timer = self.create_timer(0.01, self.publish_joints, callback_group=cb_group) # 100Hz 足够
 
     @staticmethod

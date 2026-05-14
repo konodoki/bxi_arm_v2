@@ -20,6 +20,7 @@ def generate_launch_description():
                 package="elf3_arm_ikpy_control_pico",
                 executable="elf3_arm_ikpy_control_pico",
                 output="screen",
+                emulate_tty=True,
             ),
             
             Node(
