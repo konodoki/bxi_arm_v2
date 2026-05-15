@@ -1,6 +1,6 @@
 # bxi_arm_v2
 
-此仓库为半醒机器人遥操的示例代码。除双臂部分的控制已取消，运行后机器人除双臂部分的电机全为零力矩。
+此仓库为半醒机器人遥操的示例代码。模型输出仅仅只有0～14号电机，15～28号电机为手臂。
 
 对应的apk程序仅仅只在pico4 ultra平台测试过
 
@@ -10,8 +10,7 @@ src/
 ├── bxi_rl_controller_ros2_example #半醒机器人的控制示例
 ├── elf3_arm_bringup #launch文件
 ├── elf3_arm_ikpy_control_pico #
-├── fake_trigger #虚拟pico的扳机，仅仅用于测试
-├── hand_control #灵巧手部分的控制
+├── hand_control #灵巧手部分的控制，示例里并未使用
 └── pico_bxi_server #pico的ros2驱动
 ```
 
