@@ -25,7 +25,7 @@ def generate_launch_description():
         "dance": "data/dance.onnx",
         "amp_run": "data/amp_run.onnx",
         "normal_run": "data/model_normal.onnx",
-        "noarm": "data/arm8.onnx",
+        "teleop": "data/teleop.onnx",
     }
 
     for key, value in npz_file_dict.items():

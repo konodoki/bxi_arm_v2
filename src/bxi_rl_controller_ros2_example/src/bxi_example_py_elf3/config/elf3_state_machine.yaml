@@ -35,7 +35,7 @@ remote_events:
   applause:
     slot: btn_10
     value: 3
-  hello:
+  teleop:
     slot: btn_10
     value: 4
 transition_profiles:
@@ -98,8 +98,8 @@ states:
         applause:
           to: applause
           transition: soft_switch
-        hello:
-          to: hello
+        teleop:
+          to: teleop
           transition: soft_switch
   zero_torque:
     behavior: ZeroTorqueState
@@ -186,8 +186,8 @@ states:
           transition: first_frame_switch
         toggle_dance_pause:
           action: toggle_dance_pause
-  hello:
-    behavior: HelloState
+  teleop:
+    behavior: TeleopState
     speed_profile: normal
     transitions:
       on_event:

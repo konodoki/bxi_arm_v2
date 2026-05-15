@@ -205,7 +205,7 @@ class ApplauseState(RobotControlState):
         transition: TransitionProfile,
     ) -> None:
         super().on_prepare_enter(ctx, from_state, transition)
-        ctx.preheat_model(ctx.noarm, with_cmd_vel=True)
+        ctx.preheat_model(ctx.teleop, with_cmd_vel=True)
 
     def on_enter(self, ctx: BxiExample) -> None:
         self.reset_loop(ctx)
@@ -216,9 +216,9 @@ class ApplauseState(RobotControlState):
         self.playing = True
 
     def get_first_frame(self, ctx: BxiExample) -> Optional[MotorFrame]:
-        qpos = ctx.noarm.target_dof_pos.copy()
+        qpos = ctx.teleop.target_dof_pos.copy()
         qpos[-14:] = self.applause_data[0]
-        return self._motor_frame(qpos, ctx.noarm.kps, ctx.noarm.kds)
+        return self._motor_frame(qpos, ctx.teleop.kps, ctx.teleop.kds)
 
     def on_update(self, ctx: BxiExample, dt: float) -> None:
         if ctx.is_orientation_unsafe(ctx.current_quat_xyzw):
@@ -226,7 +226,7 @@ class ApplauseState(RobotControlState):
             ctx.request_state("zero_torque", trigger="safety")
             return
 
-        qpos, vel = ctx.noarm.inference_step(
+        qpos, vel = ctx.teleop.inference_step(
             ctx.current_q,
             ctx.current_dq,
             ctx.current_quat_wxyz,
@@ -241,7 +241,7 @@ class ApplauseState(RobotControlState):
             )
             self.return_elapsed += dt
             if self.return_elapsed >= self.return_time:
-                ctx.set_motor_target(qpos, ctx.noarm.kps, ctx.noarm.kds)
+                ctx.set_motor_target(qpos, ctx.teleop.kps, ctx.teleop.kds)
                 ctx.request_state(
                     "normal",
                     trigger="applause_finished",
@@ -260,7 +260,7 @@ class ApplauseState(RobotControlState):
                 if self.playing:
                     self.frame += self.fps * dt
 
-        ctx.set_motor_target(qpos, ctx.noarm.kps, ctx.noarm.kds)
+        ctx.set_motor_target(qpos, ctx.teleop.kps, ctx.teleop.kds)
 
     def on_action(self, ctx: BxiExample, action_name: str) -> bool:
         if action_name != "toggle_dance_pause":
@@ -270,7 +270,7 @@ class ApplauseState(RobotControlState):
         return True
 
 
-class HelloState(RobotControlState):
+class TeleopState(RobotControlState):
     def __init__(self, name, state_id):
         super().__init__(name, state_id)
 
@@ -281,22 +281,22 @@ class HelloState(RobotControlState):
         transition: TransitionProfile,
     ) -> None:
         super().on_prepare_enter(ctx, from_state, transition)
-        ctx.preheat_model(ctx.noarm, with_cmd_vel=True)
+        ctx.preheat_model(ctx.teleop, with_cmd_vel=True)
 
     def on_enter(self, ctx: BxiExample) -> None:
         self.reset_loop(ctx)
         self.playing = True
 
     def get_first_frame(self, ctx: BxiExample) -> Optional[MotorFrame]:
-        qpos = ctx.noarm.target_dof_pos.copy()
-        return self._motor_frame(qpos, ctx.noarm.kps, ctx.noarm.kds)
+        qpos = ctx.teleop.target_dof_pos.copy()
+        return self._motor_frame(qpos, ctx.teleop.kps, ctx.teleop.kds)
 
     def on_update(self, ctx: BxiExample, dt: float) -> None:
         if ctx.is_orientation_unsafe(ctx.current_quat_xyzw):
             ctx.request_state("zero_torque", trigger="safety")
             return
             
-        qpos, vel = ctx.noarm.inference_step(
+        qpos, vel = ctx.teleop.inference_step(
             ctx.current_q,
             ctx.current_dq,
             ctx.current_quat_wxyz,
@@ -310,7 +310,7 @@ class HelloState(RobotControlState):
         if ctx.r_grip > 0.5:
             qpos[(3+12+7):(3+12+14)] = ctx.r_arm
             
-        ctx.set_motor_target(qpos, ctx.noarm.kps, ctx.noarm.kds)
+        ctx.set_motor_target(qpos, ctx.teleop.kps, ctx.teleop.kds)
 
     def on_action(self, ctx: BxiExample, action_name: str) -> bool:
         if action_name != "toggle_dance_pause":

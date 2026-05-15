@@ -150,7 +150,7 @@ class BxiExample(Node):
         self.dance = DanceMotionPolicy(self.npz_file_dict["dance"], self.onnx_file_dict["dance"])
         self.amp_run = HumanoidGaitPolicyLite(self.onnx_file_dict["amp_run"])
         self.normal_run = NormalMotionPolicy(self.onnx_file_dict["normal_run"])
-        self.noarm = HumanoidGaitPolicyLite(self.onnx_file_dict["noarm"])
+        self.teleop = HumanoidGaitPolicyLite(self.onnx_file_dict["teleop"])
 
         self.initial_pos = np.zeros(dof_num, dtype=np.double)
         self.pd_pos = self.normal.default_dof_pos
