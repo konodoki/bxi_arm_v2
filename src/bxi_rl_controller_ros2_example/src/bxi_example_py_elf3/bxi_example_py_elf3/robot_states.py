@@ -304,13 +304,72 @@ class TeleopState(RobotControlState):
             ctx.current_cmd_vel,
         )
         
+        left_arm_range = slice(3+12, 3+12+7)
+        right_arm_range = slice(3+12+7, 3+12+14)
+        
+        # 初始化手部状态
+        if not hasattr(self, '_hand'):
+            self._hand = {
+                'left': {'kp': None, 'target': None, 'last_grip': 0},
+                'right': {'kp': None, 'target': None, 'last_grip': 0}
+            }
+        
+        growth_rate = 0.2  # 缓启动速度
+        
+        def update_hand(hand, grip, arm_range):
+            state = self._hand[hand]
+            current_grip_state = grip > 0.5
+            last_grip_state = state['last_grip'] > 0.5
+            
+            # 检测状态切换
+            if current_grip_state != last_grip_state:
+                # 状态切换，触发缓启动/缓关闭
+                state['target'] = ctx.teleop.kps[arm_range].copy()
+                if state['kp'] is None:
+                    state['kp'] = state['target'].copy()
+                else:
+                    # 状态切换，从当前值的10%开始缓启动
+                    state['kp'] = [kp * 0.1 for kp in state['target']]
+            
+            # 如果没有目标值，初始化
+            if state['target'] is None:
+                state['target'] = ctx.teleop.kps[arm_range].copy()
+            if state['kp'] is None:
+                state['kp'] = state['target'].copy()
+            
+            # 缓慢调整到目标值（使用 any 检查是否有差距）
+            need_update = any(abs(state['kp'][i] - state['target'][i]) > 0.001 
+                            for i in range(len(state['kp'])))
+            
+            if need_update:
+                for i in range(len(state['kp'])):
+                    diff = state['target'][i] - state['kp'][i]
+                    if abs(diff) > 0.001:
+                        state['kp'][i] += diff * growth_rate * dt
+                        # 防止过冲
+                        if (diff > 0 and state['kp'][i] > state['target'][i]) or \
+                        (diff < 0 and state['kp'][i] < state['target'][i]):
+                            state['kp'][i] = state['target'][i]
+            
+            # 保存当前grip状态
+            state['last_grip'] = grip
+        
+        # 更新左右手
+        update_hand('left', ctx.l_grip, left_arm_range)
+        update_hand('right', ctx.r_grip, right_arm_range)
+        
+        # 构建完整的 kp 列表
+        kp_to_use = ctx.teleop.kps.copy()
+        kp_to_use[left_arm_range] = self._hand['left']['kp']
+        kp_to_use[right_arm_range] = self._hand['right']['kp']
+        
+        # 控制手臂位置（仅在 grip > 0.5 时）
         if ctx.l_grip > 0.5:
-            qpos[(3+12):(3+12+7)] = ctx.l_arm
-            
+            qpos[left_arm_range] = ctx.l_arm
         if ctx.r_grip > 0.5:
-            qpos[(3+12+7):(3+12+14)] = ctx.r_arm
+            qpos[right_arm_range] = ctx.r_arm
             
-        ctx.set_motor_target(qpos, ctx.teleop.kps, ctx.teleop.kds)
+        ctx.set_motor_target(qpos, kp_to_use, ctx.teleop.kds)
 
     def on_action(self, ctx: BxiExample, action_name: str) -> bool:
         if action_name != "toggle_dance_pause":
