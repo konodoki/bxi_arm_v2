@@ -1,6 +1,7 @@
 import math
 import os
 import pickle
+from datetime import datetime
 from typing import TYPE_CHECKING, Any, Optional
 
 import numpy as np
@@ -273,6 +274,11 @@ class ApplauseState(RobotControlState):
 class TeleopState(RobotControlState):
     def __init__(self, name, state_id):
         super().__init__(name, state_id)
+        self._recording = False
+        self._record_fps = 0
+        self._record_root_pos = []
+        self._record_root_rot = []
+        self._record_dof_pos = []
 
     def on_prepare_enter(
         self,
@@ -287,12 +293,115 @@ class TeleopState(RobotControlState):
         self.reset_loop(ctx)
         self.playing = True
 
+    def on_exit(self, ctx: BxiExample) -> None:
+        if self._recording:
+            self._stop_recording(ctx, reason="state_exit")
+        super().on_exit(ctx)
+
     def get_first_frame(self, ctx: BxiExample) -> Optional[MotorFrame]:
         qpos = ctx.teleop.target_dof_pos.copy()
         return self._motor_frame(qpos, ctx.teleop.kps, ctx.teleop.kds)
 
+    def _reset_recording_buffers(self) -> None:
+        self._record_root_pos = []
+        self._record_root_rot = []
+        self._record_dof_pos = []
+
+    def _start_recording(self, ctx: BxiExample, dt: float) -> None:
+        self._reset_recording_buffers()
+        self._recording = True
+        self._record_fps = max(1, int(round(1.0 / dt))) if dt > 0.0 else 0
+        print(f"teleop recording started, fps={self._record_fps}")
+
+    def _stop_recording(self, ctx: BxiExample, reason: str = "trigger_release") -> None:
+        self._recording = False
+        frame_count = len(self._record_dof_pos)
+        if frame_count == 0:
+            print(f"teleop recording stopped without frames ({reason})")
+            self._reset_recording_buffers()
+            return
+
+        data = {
+            "fps": int(self._record_fps),
+            "root_pos": np.asarray(self._record_root_pos, dtype=np.float64),
+            "root_rot": np.asarray(self._record_root_rot, dtype=np.float64),
+            "dof_pos": np.asarray(self._record_dof_pos, dtype=np.float64),
+            "local_body_pos": None,
+            "link_body_list": None,
+        }
+
+        record_dir = self._record_output_dir()
+        os.makedirs(record_dir, exist_ok=True)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        record_path = os.path.join(record_dir, f"teleop_record_{timestamp}.pkl")
+        with open(record_path, "wb") as record_file:
+            pickle.dump(data, record_file, protocol=pickle.HIGHEST_PROTOCOL)
+
+        print(
+            f"teleop recording saved: {record_path}, "
+            f"frames={frame_count}, dof_pos={data['dof_pos'].shape}"
+        )
+        self._reset_recording_buffers()
+
+    def _record_output_dir(self) -> str:
+        env_dir = os.environ.get("BXI_TELEOP_RECORD_DIR")
+        if env_dir:
+            return env_dir
+
+        try:
+            package_root = get_package_share_path("bxi_example_py_elf3")
+        except Exception:
+            package_root = os.path.dirname(os.path.dirname(__file__))
+        return os.path.join(package_root, "data", "teleop_records")
+
+    def _record_frame(self, ctx: BxiExample, qpos: np.ndarray) -> None:
+        self._record_root_pos.append(self._current_root_pos(ctx))
+        self._record_root_rot.append(self._current_root_rot(ctx))
+        self._record_dof_pos.append(self._current_dof_pos(ctx, qpos))
+
+    def _current_root_pos(self, ctx: BxiExample) -> np.ndarray:
+        return np.zeros(3, dtype=np.float64)
+
+    def _current_root_rot(self, ctx: BxiExample) -> np.ndarray:
+        root_rot = getattr(ctx, "current_quat_wxyz", None)
+        root_rot = np.asarray(
+            root_rot if root_rot is not None else [1.0, 0.0, 0.0, 0.0],
+            dtype=np.float64,
+        ).reshape(4)
+        norm = np.linalg.norm(root_rot)
+        if norm <= 1e-8:
+            return np.array([1.0, 0.0, 0.0, 0.0], dtype=np.float64)
+        return (root_rot / norm).copy()
+
+    def _current_dof_pos(self, ctx: BxiExample, qpos: np.ndarray) -> np.ndarray:
+        dof_pos = getattr(ctx, "current_q", qpos)
+        dof_pos = np.asarray(dof_pos, dtype=np.float64)
+        if dof_pos.shape != np.asarray(qpos).shape:
+            dof_pos = np.asarray(qpos, dtype=np.float64)
+        return dof_pos.copy()
+
+    def _update_recording(self, ctx: BxiExample, dt: float, qpos: np.ndarray) -> None:
+        l_trigger = float(getattr(ctx, "l_trigger", 0.0))
+        r_trigger = float(getattr(ctx, "r_trigger", 0.0))
+
+        if self._recording and l_trigger < 0.5 and r_trigger < 0.5:
+            self._stop_recording(ctx)
+            return
+
+        if (
+            not self._recording
+            and l_trigger > 0.5
+            and r_trigger > 0.5
+        ):
+            self._start_recording(ctx, dt)
+
+        if self._recording:
+            self._record_frame(ctx, qpos)
+
     def on_update(self, ctx: BxiExample, dt: float) -> None:
         if ctx.is_orientation_unsafe(ctx.current_quat_xyzw):
+            if self._recording:
+                self._stop_recording(ctx, reason="safety")
             ctx.request_state("zero_torque", trigger="safety")
             return
             
@@ -368,7 +477,8 @@ class TeleopState(RobotControlState):
             qpos[left_arm_range] = ctx.l_arm
         if ctx.r_grip > 0.5:
             qpos[right_arm_range] = ctx.r_arm
-            
+
+        self._update_recording(ctx, dt, qpos)
         ctx.set_motor_target(qpos, kp_to_use, ctx.teleop.kds)
 
     def on_action(self, ctx: BxiExample, action_name: str) -> bool:

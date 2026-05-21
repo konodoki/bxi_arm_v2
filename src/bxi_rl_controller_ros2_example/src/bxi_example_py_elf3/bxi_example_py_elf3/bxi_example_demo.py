@@ -271,10 +271,14 @@ class BxiExample(Node):
         self.r_arm=[0.5,-0.3,0.1,-0.2, 0.0, 0.0,0.0]
         self.l_grip = 0.0
         self.r_grip = 0.0
+        self.l_trigger = 0.0
+        self.r_trigger = 0.0
         self.arm_joint_state_pub = self.create_publisher(sensor_msgs.msg.JointState, 'pico_control_joint_states', qos)
         self.create_subscription(sensor_msgs.msg.JointState, 'pico_control_joint_commands', self.arm_joint_callback, qos)
         self.create_subscription(std_msgs.msg.Float32, 'pico/left_grip', self.left_grip_callback, qos)
         self.create_subscription(std_msgs.msg.Float32, 'pico/right_grip', self.right_grip_callback, qos)
+        self.create_subscription(std_msgs.msg.Float32, 'pico/left_trigger', self.left_trigger_callback, qos)
+        self.create_subscription(std_msgs.msg.Float32, 'pico/right_trigger', self.right_trigger_callback, qos)
         
         self.rest_srv = self.create_client(bxiSrv.RobotReset, self.topic_prefix+'robot_reset')
         self.sim_rest_srv = self.create_client(bxiSrv.SimulationReset, self.topic_prefix+'sim_reset')
@@ -295,6 +299,12 @@ class BxiExample(Node):
     def right_grip_callback(self,msg):
         self.r_grip=msg.data
         
+    def left_trigger_callback(self,msg):
+        self.l_trigger = msg.data
+
+    def right_trigger_callback(self,msg):
+        self.r_trigger = msg.data
+
     def timer_callback(self):
         # ptyhon 与 rclpy 多线程不太友好，这里使用定时间+简易状态机运行a
         events = []

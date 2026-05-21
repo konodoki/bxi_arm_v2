@@ -210,6 +210,7 @@ ros2 launch bxi_example_py_elf3 example_demo_hw.launch.py
 4. 使用遥控器让机器人进入 `normal` 站立状态。
 5. 按下 `RT + A` 进入遥操状态。
 6. 握紧 Pico 手柄抓握键，接入 Pico 遥操作控制。
+7. 当两个扳机都按紧的状态启动手部动作录制，有一个松开结束录制。录制的文件位于install/bxi_example_py_elf3/share/bxi_example_py_elf3/data/teleop_records
 
 ## 常用 ROS 话题
 
