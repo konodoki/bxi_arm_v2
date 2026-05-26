@@ -98,11 +98,11 @@ class RobotControlNode(Node):
         chain = self.l_chain if side == 'l' else self.r_chain
         initial_angles = None
         
-        if side == 'l' and self.left_real_joints is not None:
+        if side == 'l' and hasattr(self,"left_real_joints"):
             if time.time() - self.last_joint_state_s < 2:
                 initial_angles = self.left_real_joints
                 
-        if side == 'r' and self.right_real_joints is not None:
+        if side == 'r' and hasattr(self,"right_real_joints"):
             if time.time() - self.last_joint_state_s < 2:
                 initial_angles = self.right_real_joints
                 
