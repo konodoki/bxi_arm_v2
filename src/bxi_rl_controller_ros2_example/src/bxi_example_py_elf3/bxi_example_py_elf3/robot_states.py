@@ -366,6 +366,8 @@ import std_msgs
 from datetime import datetime
 from sensor_msgs.msg import JointState
 from rclpy.qos import QoSProfile, qos_profile_sensor_data
+import communication.msg as bxiMsg
+from bxi_example_py_elf3.utils.bxi_motor import *
 
 class TeleopState(RobotControlState):
     def __init__(self, name, state_id):
@@ -409,6 +411,15 @@ class TeleopState(RobotControlState):
         self.right_trigger_sub = ctx.create_subscription(
             std_msgs.msg.Float32, "pico/right_trigger", self.right_trigger_callback, qos
         )
+        qos_hand=QoSProfile(depth=100)
+        self.gripper_control_pub = ctx.create_publisher(bxiMsg.CANFDPacket, "canfd_packet/tx", qos_hand)
+        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.enter_motor_mode()))
+        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.enter_motor_mode()))
+        print("clamp enable!")
+        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.zero()))
+        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.zero()))
+        print("clamp set zero!")
+        
 
     def arm_joint_callback(self, msg):
         joint_pos = msg.position
@@ -539,7 +550,40 @@ class TeleopState(RobotControlState):
 
         if self._recording:
             self._record_frame(ctx, qpos)
-
+    def _update_clamp(self, ctx: BxiExample, dt: float):
+        l_trigger = float(getattr(self, "l_trigger", 0.0))
+        r_trigger = float(getattr(self, "r_trigger", 0.0))
+        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.pack_cmd(
+            joint=JointControl(
+                p_des=float((1-l_trigger)*0.08),
+                v_des=0.01,
+                kp=float(1),
+                kd=float(1),
+                t_ff=0.0,
+            ),
+            p_max=3.14,
+            p_min=-3.14,
+            v_max=2.0,
+            t_max=1.0,
+            kp_max=20.0,
+            kd_max=5.0,
+        )))
+        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.pack_cmd(
+            joint=JointControl(
+                p_des=float((1-r_trigger)*0.08),
+                v_des=0.01,
+                kp=float(1),
+                kd=float(1),
+                t_ff=0.0,
+            ),
+            p_max=3.14,
+            p_min=-3.14,
+            v_max=2.0,
+            t_max=1.0,
+            kp_max=20.0,
+            kd_max=5.0,
+        )))
+        
     def on_update(self, ctx: BxiExample, dt: float) -> None:
         if ctx.is_orientation_unsafe(ctx.current_quat_xyzw):
             if self._recording:
@@ -642,7 +686,10 @@ class TeleopState(RobotControlState):
         if self.r_grip > 0.5:
             qpos[right_arm_range] = self.r_arm
 
-        self._update_recording(ctx, dt, qpos)
+        #录制 或者 控制夹爪 二选一
+        self._update_recording(ctx, dt, qpos) #录制
+        # self._update_clamp(ctx,dt) #夹爪
+        
         ctx.set_motor_target(qpos, kp_to_use, ctx.teleop.kds)
 
     def on_action(self, ctx: BxiExample, action_name: str) -> bool:
