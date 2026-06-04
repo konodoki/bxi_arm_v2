@@ -555,33 +555,31 @@ class TeleopState(RobotControlState):
         r_trigger = float(getattr(self, "r_trigger", 0.0))
         self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.pack_cmd(
             joint=JointControl(
-                p_des=float((1-l_trigger)*0.08),
-                v_des=0.01,
-                kp=float(1),
+                p_des=float((1-l_trigger)*0.1),
+                v_des=0.0,
+                kp=float(20),
                 kd=float(1),
                 t_ff=0.0,
             ),
-            p_max=3.14,
-            p_min=-3.14,
-            v_max=2.0,
-            t_max=1.0,
-            kp_max=20.0,
-            kd_max=5.0,
+            p_range=(-12.5,12.5),
+            v_range=(-45.0,45.0),
+            t_range=(-40,40),
+            kp_range=(0,500),
+            kd_range=(0,5),
         )))
         self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.pack_cmd(
             joint=JointControl(
-                p_des=float((1-r_trigger)*0.08),
-                v_des=0.01,
-                kp=float(1),
+                p_des=float((1-r_trigger)*0.1),
+                v_des=0.0,
+                kp=float(20),
                 kd=float(1),
                 t_ff=0.0,
             ),
-            p_max=3.14,
-            p_min=-3.14,
-            v_max=2.0,
-            t_max=1.0,
-            kp_max=20.0,
-            kd_max=5.0,
+            p_range=(-12.5,12.5),
+            v_range=(-45.0,45.0),
+            t_range=(-40,40),
+            kp_range=(0,500),
+            kd_range=(0,5),
         )))
         
     def on_update(self, ctx: BxiExample, dt: float) -> None:
