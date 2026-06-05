@@ -413,12 +413,13 @@ class TeleopState(RobotControlState):
         )
         qos_hand=QoSProfile(depth=100)
         self.gripper_control_pub = ctx.create_publisher(bxiMsg.CANFDPacket, "canfd_packet/tx", qos_hand)
-        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.enter_motor_mode()))
-        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.enter_motor_mode()))
-        print("clamp enable!")
-        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.zero()))
-        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.zero()))
-        print("clamp set zero!")
+        #以下注释仅需每次上电重设零点使用，若校准过零点不必开启
+        # self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.enter_motor_mode()))
+        # self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.enter_motor_mode()))
+        # print("clamp enable!")
+        # self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.zero()))
+        # self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.zero()))
+        # print("clamp set zero!")
         
 
     def arm_joint_callback(self, msg):
@@ -553,9 +554,11 @@ class TeleopState(RobotControlState):
     def _update_clamp(self, ctx: BxiExample, dt: float):
         l_trigger = float(getattr(self, "l_trigger", 0.0))
         r_trigger = float(getattr(self, "r_trigger", 0.0))
+        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.enter_motor_mode()))
+        self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.enter_motor_mode()))
         self.gripper_control_pub.publish(BxiMotor.build_motor_packet(5,1,BxiMotor.pack_cmd(
             joint=JointControl(
-                p_des=float((1-l_trigger)*0.1),
+                p_des=float((1-l_trigger)*0.5-0.1),
                 v_des=0.0,
                 kp=float(20),
                 kd=float(1),
@@ -569,7 +572,7 @@ class TeleopState(RobotControlState):
         )))
         self.gripper_control_pub.publish(BxiMotor.build_motor_packet(6,1,BxiMotor.pack_cmd(
             joint=JointControl(
-                p_des=float((1-r_trigger)*0.1),
+                p_des=float((1-r_trigger)*0.5-0.1),
                 v_des=0.0,
                 kp=float(20),
                 kd=float(1),
@@ -685,8 +688,8 @@ class TeleopState(RobotControlState):
             qpos[right_arm_range] = self.r_arm
 
         #录制 或者 控制夹爪 二选一
-        self._update_recording(ctx, dt, qpos) #录制
-        # self._update_clamp(ctx,dt) #夹爪
+        # self._update_recording(ctx, dt, qpos) #录制
+        self._update_clamp(ctx,dt) #夹爪
         
         ctx.set_motor_target(qpos, kp_to_use, ctx.teleop.kds)
 

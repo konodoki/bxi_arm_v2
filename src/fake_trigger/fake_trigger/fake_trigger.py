@@ -14,7 +14,7 @@ class SliderPublisherNode(Node):
     def __init__(self):
         super().__init__('slider_publisher_node')
         
-        # 创建发布者，发布到 /pico/right_trigger 话题
+        # 创建发布者，发布到 /pico/*_trigger 话题
         self.r_publisher_ = self.create_publisher(Float32, '/pico/right_trigger', 10)
         self.l_publisher_ = self.create_publisher(Float32, '/pico/left_trigger', 10)
         
@@ -58,7 +58,7 @@ class SliderWindow(QMainWindow):
         layout = QVBoxLayout(central_widget)
         
         # 标题标签
-        title_label = QLabel('右扳机控制器 (0.0 - 1.0)')
+        title_label = QLabel('左右扳机控制器 (0.0 - 1.0)')
         title_label.setAlignment(Qt.AlignCenter)
         title_label.setStyleSheet("font-size: 16px; font-weight: bold; margin: 10px;")
         layout.addWidget(title_label)

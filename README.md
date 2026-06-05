@@ -30,6 +30,9 @@
 ├── build.sh                            # colcon Release 构建脚本
 ├── clean.sh                            # 清理 build/install/log
 ├── push_rtsp.sh                        # 手动启动 MediaMTX + ffmpeg 推流脚本
+├── start_simulation.sh                 # tmux 一键启动仿真遥操作流程
+├── start_hardware.sh                   # tmux 一键启动真机遥操作辅助流程
+├── stop_all.sh                         # 停止 tmux 会话并按需恢复真机遥控服务
 └── src/
     ├── bxi_rl_controller_ros2_example/ # BXI ROS 2 控制示例、遥控器、策略模型与文档
     ├── elf3_arm_bringup/               # Pico/手臂/灵巧手相关 launch
@@ -49,6 +52,7 @@
 - Ubuntu 22.04
 - ROS 2 Humble
 - `colcon` 构建工具
+- `tmux`：用于一键启动脚本创建多面板运行环境
 - BXI ROS 2 基础包：提供 `communication`、`mujoco`、`hardware_elf3` 等依赖包
 - `ffmpeg`：用于 Pico 图传推流，仓库未集成
 - `libglfw3-dev`：用于 Mujoco 仿真
@@ -62,6 +66,7 @@
 sudo apt update
 sudo apt install -y \
   python3-colcon-common-extensions \
+  tmux \
   ffmpeg \
   libglfw3-dev \
   libyaml-cpp-dev \
@@ -96,6 +101,64 @@ source install/setup.bash
 ```bash
 bash clean.sh
 ```
+
+## 快捷启动与停止脚本
+
+仓库根目录提供了 `start_simulation.sh`、`start_hardware.sh` 和 `stop_all.sh` 三个快捷脚本。使用前请先完成构建，并在当前终端加载基础环境：
+
+```bash
+source /opt/ros/humble/setup.bash
+source /opt/bxi/bxi_ros2_pkg/setup.bash
+source install/setup.bash
+```
+
+快捷启动脚本会创建名为 `teleop` 的 tmux 会话，并在启动的 ROS 命令中设置：
+
+```bash
+ROS_DOMAIN_ID=88
+ROS_LOCALHOST_ONLY=1
+ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST
+```
+
+两个启动脚本都会先检查 `/dev/video4` 摄像头是否可用；如果只是验证基础仿真且不需要 Pico 图传，可以继续使用下方手动启动流程。若已存在 `teleop` 会话，脚本会退出；可使用 `tmux -L temp attach-session -t teleop` 重新进入，或使用 `tmux -L temp kill-session -t teleop` 手动关闭该会话。
+
+仿真快捷启动：
+
+```bash
+bash start_simulation.sh
+```
+
+该脚本会在 tmux 中启动 3 个面板：
+
+- `遥控器`：`remote_controller.launch.py`
+- `仿真程序`：`example_demo.launch.py`
+- `Pico解算`：`elf3_arm_bringup_nohand.launch.py`
+
+真机快捷启动需要在 root 用户中运行：
+
+```bash
+sudo su
+cd /path/to/this/repo
+source /opt/ros/humble/setup.bash
+source /opt/bxi/bxi_ros2_pkg/setup.bash
+source install/setup.bash
+bash start_hardware.sh
+```
+
+`start_hardware.sh` 会检查当前用户、摄像头、`hardware_elf3` 进程和 `ros_elf_launch.service` 状态，然后在 tmux 中启动 2 个面板：
+
+- `遥控器`：`remote_controller.launch.py`
+- `Pico解算`：`elf3_arm_bringup_nohand.launch.py`
+
+真机硬件节点和控制策略由遥控器配置中的 `system.start` 事件触发，执行 `example_demo_hw.launch.py` 和 BMS 启动命令；对应配置位于 `src/bxi_rl_controller_ros2_example/src/remote_controller/config/xbox_default.yaml`。如需直接观察各节点日志或手动排错，也可以使用下方真机三终端流程。
+
+停止快捷流程：
+
+```bash
+bash stop_all.sh
+```
+
+执行前请先确认 `hardware_elf3` 已停止。脚本检测到 `hardware_elf3` 正在运行时会直接退出，避免在硬件驱动仍运行时关闭辅助进程。若系统中存在 `ros_elf_launch.service`，脚本会询问是否重启该服务；最后关闭 tmux server。
 
 ## Pico 图传检查
 
