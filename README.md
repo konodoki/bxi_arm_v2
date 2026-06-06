@@ -359,12 +359,13 @@ ss -lntup | grep 2212
 
 ### 摄像头无法打开
 
-当前代码默认使用 `/dev/video4`。如果实际设备号不同，请修改以下文件：
+`pico_bxi_server` 默认使用 `/dev/video4`。如果实际设备号不同，可以通过 ROS 参数覆盖：
 
-```text
-src/pico_bxi_server/src/pico_bxi_server.cpp
-push_rtsp.sh
+```bash
+ros2 run pico_bxi_server pico_bxi_server --ros-args -p video_device:=/dev/video2
 ```
+
+如果使用 `push_rtsp.sh` 单独测试推流，还需要同步修改该脚本里的设备号。
 
 ### 启用 `elf3_arm_bringup.launch.py` 后找不到 `aero_hand_open`
 

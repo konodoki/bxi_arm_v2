@@ -1,78 +1,153 @@
 #include "ProcessHandler.h"
-#include <unistd.h>
-#include <sys/wait.h>
-#include <iostream>
-#include <array>
 
-ProcessHandler::ProcessHandler() : pid(-1) {
-    pipe_fd[0] = -1;
-    pipe_fd[1] = -1;
-}
+#include <cerrno>
+#include <chrono>
+#include <csignal>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <sys/wait.h>
+#include <thread>
+#include <unistd.h>
+
+namespace {
+constexpr auto kTerminatePolls = 20;
+constexpr auto kTerminatePollDelay = std::chrono::milliseconds(50);
+}  // namespace
+
+ProcessHandler::ProcessHandler() : pipe_fd_{-1, -1}, pid_(-1) {}
 
 ProcessHandler::~ProcessHandler() {
-    if (pipe_fd[0] != -1) close(pipe_fd[0]);
-    if (pid > 0) waitpid(pid, nullptr, WNOHANG);
+    stop();
 }
 
-bool ProcessHandler::execute(const std::string& command, const std::vector<std::string>& args) {
-    // 1. 创建管道
-    if (pipe(pipe_fd) == -1) {
-        perror("pipe");
+bool ProcessHandler::execute(
+    const std::string& command,
+    const std::vector<std::string>& args
+) {
+    if (isRunning()) {
+        std::cerr << "process already running: " << command << std::endl;
         return false;
     }
 
-    // 2. 创建子进程
-    pid = fork();
+    closePipe();
+    if (pipe(pipe_fd_) == -1) {
+        std::cerr << "pipe failed: " << std::strerror(errno) << std::endl;
+        return false;
+    }
 
-    if (pid == 0) { // 子进程
-        // 关闭不需要的读取端
-        close(pipe_fd[0]);
+    pid_ = fork();
+    if (pid_ == 0) {
+        close(pipe_fd_[0]);
+        dup2(pipe_fd_[1], STDOUT_FILENO);
+        dup2(pipe_fd_[1], STDERR_FILENO);
+        close(pipe_fd_[1]);
 
-        // 将标准输出 (STDOUT) 重定向到管道的写入端
-        dup2(pipe_fd[1], STDOUT_FILENO);
-        // 如果也想捕获标准错误，取消下面这行的注释
-        // dup2(pipe_fd[1], STDERR_FILENO);
-
-        close(pipe_fd[1]);
-
-        // 准备参数执行
-        std::vector<char*> c_args;
-        c_args.push_back(const_cast<char*>(command.c_str()));
+        std::vector<char*> argv;
+        argv.reserve(args.size() + 2);
+        argv.push_back(const_cast<char*>(command.c_str()));
         for (const auto& arg : args) {
-            c_args.push_back(const_cast<char*>(arg.c_str()));
+            argv.push_back(const_cast<char*>(arg.c_str()));
         }
-        c_args.push_back(nullptr);
+        argv.push_back(nullptr);
 
-        execvp(command.c_str(), c_args.data());
-        
-        // 如果 execvp 执行失败
-        perror("execvp");
-        exit(1);
-    } else if (pid > 0) { // 父进程
-        // 关闭不需要的写入端
-        close(pipe_fd[1]);
-        return true;
-    } else {
-        perror("fork");
+        execvp(command.c_str(), argv.data());
+        std::cerr << "execvp failed: " << command << ": "
+                  << std::strerror(errno) << std::endl;
+        _exit(EXIT_FAILURE);
+    }
+
+    if (pid_ < 0) {
+        std::cerr << "fork failed: " << std::strerror(errno) << std::endl;
+        closePipe();
         return false;
     }
+
+    close(pipe_fd_[1]);
+    pipe_fd_[1] = -1;
+    return true;
 }
 
 std::string ProcessHandler::readLine() {
-    char buffer[1024];
-    std::string result = "";
-    
-    // 这里使用简单的 read，生产环境建议使用更健壮的缓冲读取
-    ssize_t bytesRead = read(pipe_fd[0], buffer, sizeof(buffer) - 1);
-    if (bytesRead > 0) {
-        buffer[bytesRead] = '\0';
-        result = buffer;
+    if (pipe_fd_[0] == -1) {
+        return {};
     }
-    return result;
+
+    std::string line;
+    char c = '\0';
+    while (true) {
+        const ssize_t bytes_read = read(pipe_fd_[0], &c, 1);
+        if (bytes_read > 0) {
+            line.push_back(c);
+            if (c == '\n') {
+                break;
+            }
+            continue;
+        }
+
+        if (bytes_read == 0) {
+            break;
+        }
+
+        if (errno == EINTR) {
+            continue;
+        }
+
+        break;
+    }
+    return line;
 }
 
-bool ProcessHandler::isRunning() const {
-    if (pid <= 0) return false;
-    int status;
-    return waitpid(pid, &status, WNOHANG) == 0;
+bool ProcessHandler::isRunning() {
+    if (pid_ <= 0) {
+        return false;
+    }
+
+    int status = 0;
+    const pid_t result = waitpid(pid_, &status, WNOHANG);
+    if (result == 0) {
+        return true;
+    }
+
+    if (result == pid_ || errno == ECHILD) {
+        pid_ = -1;
+    }
+    return false;
+}
+
+void ProcessHandler::stop() {
+    if (pid_ <= 0) {
+        closePipe();
+        return;
+    }
+
+    int status = 0;
+    if (waitpid(pid_, &status, WNOHANG) == 0) {
+        kill(pid_, SIGTERM);
+        for (int i = 0; i < kTerminatePolls; ++i) {
+            if (waitpid(pid_, &status, WNOHANG) == pid_) {
+                pid_ = -1;
+                closePipe();
+                return;
+            }
+            std::this_thread::sleep_for(kTerminatePollDelay);
+        }
+
+        kill(pid_, SIGKILL);
+        waitpid(pid_, &status, 0);
+    }
+
+    pid_ = -1;
+    closePipe();
+}
+
+void ProcessHandler::closePipe() {
+    if (pipe_fd_[0] != -1) {
+        close(pipe_fd_[0]);
+        pipe_fd_[0] = -1;
+    }
+    if (pipe_fd_[1] != -1) {
+        close(pipe_fd_[1]);
+        pipe_fd_[1] = -1;
+    }
 }

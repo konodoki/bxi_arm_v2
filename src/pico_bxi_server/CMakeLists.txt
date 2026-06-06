@@ -5,23 +5,21 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
-file(GLOB_RECURSE sources src/*.cpp)
-add_executable(pico_bxi_server ${sources})
+
+add_executable(pico_bxi_server
+  src/pico_bxi_server.cpp
+  src/TcpReceiver.cpp
+  src/ProcessHandler.cpp
+)
 target_include_directories(pico_bxi_server PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
-  "include"
 )
-target_compile_features(pico_bxi_server PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
-ament_target_dependencies(pico_bxi_server rclcpp geometry_msgs std_msgs)
+target_compile_features(pico_bxi_server PUBLIC cxx_std_17)
+ament_target_dependencies(pico_bxi_server rclcpp std_msgs)
 install(TARGETS pico_bxi_server
   DESTINATION lib/${PROJECT_NAME})
 if(BUILD_TESTING)

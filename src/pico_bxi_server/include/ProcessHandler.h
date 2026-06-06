@@ -1,6 +1,8 @@
 #ifndef PROCESS_HANDLER_H
 #define PROCESS_HANDLER_H
 
+#include <sys/types.h>
+
 #include <string>
 #include <vector>
 
@@ -9,18 +11,22 @@ public:
     ProcessHandler();
     ~ProcessHandler();
 
-    // 启动程序并重定向输出
-    bool execute(const std::string& command, const std::vector<std::string>& args);
-    
-    // 从管道读取一行输出
-    std::string readLine();
+    ProcessHandler(const ProcessHandler&) = delete;
+    ProcessHandler& operator=(const ProcessHandler&) = delete;
 
-    // 检查子进程是否还在运行
-    bool isRunning() const;
+    bool execute(
+        const std::string& command,
+        const std::vector<std::string>& args
+    );
+    std::string readLine();
+    bool isRunning();
+    void stop();
 
 private:
-    int pipe_fd[2]; // 0: 读取端, 1: 写入端
-    pid_t pid;
+    void closePipe();
+
+    int pipe_fd_[2];
+    pid_t pid_;
 };
 
 #endif

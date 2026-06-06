@@ -1,111 +1,293 @@
+"""Pico trigger to dual-hand joint command bridge."""
+
+from dataclasses import dataclass
+from typing import Iterable, List, Sequence, Tuple
+
 import rclpy
+from aero_hand_open_msgs.msg import JointControl
 from rclpy.node import Node
 from std_msgs.msg import Float32
-from aero_hand_open_msgs.msg import JointControl
 
-class Hand:
-    """封装单个手掌的控制逻辑"""
-    def __init__(self, open_pos, close_pos, timing):
-        self.open_pos = open_pos
-        self.close_pos = close_pos
-        self.timing = timing
 
-    def get_interpolated_positions(self, trigger_val):
-        """核心计算：根据触发值和时序计算当前所有关节位置"""
-        # 限制输入范围 0~1
-        trigger_val = max(0.0, min(1.0, trigger_val))
-        
-        target_positions = []
-        for i in range(16):
-            start_t, end_t = self.timing[i]
-            
-            # 计算局部进度 (Local Fraction)
-            if trigger_val <= start_t:
-                local_f = 0.0
-            elif trigger_val >= end_t:
-                local_f = 1.0
+JOINT_COUNT = 16
+NODE_NAME = 'pico_dual_hand_controller'
+
+DEFAULT_OPEN_POSITIONS = [
+    1.2,
+    0.2,
+    0.2,
+    0.2,
+    *([0.3] * 12),
+]
+DEFAULT_CLOSE_POSITIONS = [
+    1.745,
+    *([1.571] * 15),
+]
+DEFAULT_TIMING = [
+    (0.0, 0.2),
+    (0.4, 0.8),
+    (0.1, 0.9),
+    (0.2, 1.0),
+    (0.0, 0.4),
+    (0.1, 0.8),
+    (0.2, 0.9),
+    (0.1, 0.3),
+    (0.2, 0.6),
+    (0.3, 0.9),
+    (0.2, 0.4),
+    (0.3, 0.7),
+    (0.4, 0.9),
+    (0.4, 0.5),
+    (0.5, 0.8),
+    (0.6, 1.0),
+]
+
+
+def _flatten_timing(
+    timing: Sequence[Tuple[float, float]]
+) -> List[float]:
+    return [value for pair in timing for value in pair]
+
+
+def _pair_timing(values: Iterable[float]) -> List[Tuple[float, float]]:
+    timing_values = [float(value) for value in values]
+    if len(timing_values) != JOINT_COUNT * 2:
+        raise ValueError(
+            f'timing must contain {JOINT_COUNT * 2} values, '
+            f'got {len(timing_values)}'
+        )
+
+    pairs = [
+        (timing_values[index], timing_values[index + 1])
+        for index in range(0, len(timing_values), 2)
+    ]
+    for joint_index, (start, end) in enumerate(pairs):
+        if end < start:
+            raise ValueError(
+                f'timing pair {joint_index} must have end >= start'
+            )
+    return pairs
+
+
+def _coerce_joint_values(
+    name: str,
+    values: Iterable[float],
+) -> List[float]:
+    joint_values = [float(value) for value in values]
+    if len(joint_values) != JOINT_COUNT:
+        raise ValueError(
+            f'{name} must contain {JOINT_COUNT} values, '
+            f'got {len(joint_values)}'
+        )
+    return joint_values
+
+
+def _coerce_timing_pairs(
+    timing: Iterable[Tuple[float, float]]
+) -> List[Tuple[float, float]]:
+    pairs = []
+    for joint_index, pair in enumerate(timing):
+        if len(pair) != 2:
+            raise ValueError(
+                f'timing pair {joint_index} must contain 2 values'
+            )
+
+        start, end = float(pair[0]), float(pair[1])
+        if end < start:
+            raise ValueError(
+                f'timing pair {joint_index} must have end >= start'
+            )
+        pairs.append((start, end))
+
+    if len(pairs) != JOINT_COUNT:
+        raise ValueError(
+            f'timing must contain {JOINT_COUNT} pairs, got {len(pairs)}'
+        )
+    return pairs
+
+
+@dataclass(frozen=True)
+class HandProfile:
+    """Open/close profile and per-joint timing for one hand."""
+
+    open_positions: Sequence[float]
+    close_positions: Sequence[float]
+    timing: Sequence[Tuple[float, float]]
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self,
+            'open_positions',
+            _coerce_joint_values('open_positions', self.open_positions),
+        )
+        object.__setattr__(
+            self,
+            'close_positions',
+            _coerce_joint_values('close_positions', self.close_positions),
+        )
+        object.__setattr__(
+            self,
+            'timing',
+            _coerce_timing_pairs(self.timing),
+        )
+
+    def interpolate(self, trigger_value: float) -> List[float]:
+        """Return target joint positions for a trigger value in [0, 1]."""
+        clamped_trigger = max(0.0, min(1.0, float(trigger_value)))
+        targets = []
+
+        for open_pos, close_pos, (start, end) in zip(
+            self.open_positions,
+            self.close_positions,
+            self.timing,
+        ):
+            if clamped_trigger <= start:
+                fraction = 0.0
+            elif clamped_trigger >= end:
+                fraction = 1.0
+            elif end == start:
+                fraction = 1.0
             else:
-                # 线性映射: 将 [start_t, end_t] 映射到 [0, 1]
-                local_f = (trigger_val - start_t) / (end_t - start_t)
-            
-            # 关节线性插值
-            val = self.open_pos[i] + (self.close_pos[i] - self.open_pos[i]) * local_f
-            target_positions.append(val)
-        
-        return target_positions
+                fraction = (clamped_trigger - start) / (end - start)
+
+            targets.append(open_pos + (close_pos - open_pos) * fraction)
+
+        return targets
+
 
 class PicoDualHandNode(Node):
-    def __init__(self):
-        super().__init__('pico_dual_hand_controller')
+    """ROS node that maps Pico triggers to hand joint commands."""
 
-        # --- 1. 左手独立配置 ---
-        left_open = [1.2]*1+[0.2]*3+[0.3]*14
-        left_close = [1.745, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571, 1.571]
-        # 左手时序：拇指和食指先扣住，其他手指后收紧
-        left_timing = [
-            # --- 第一阶段：拇指和食指扣住物体 (0.0-0.4) ---
-            
-            # 大拇指 (位置 0-3) - 先扣住
-            (0.0, 0.2), (0.4, 0.8),     # 0,1 虎口与指根：首先接触物体
-            (0.1, 0.9), (0.2, 1.0),     # 2,3 指中与指尖：逐步扣紧
-            
-            # 食指 (位置 4-6) - 同步拇指扣住
-            (0.0, 0.4),                 # 4 指根：最早接触
-            (0.1, 0.8),                 # 5 指中
-            (0.2, 0.9),                 # 6 指尖：完成扣住动作
-            
-            # --- 第二阶段：其他手指收紧 (0.4-1.0) ---
-            
-            # 中指 (位置 7-9) - 稍后收紧
-            (0.1, 0.3),                 # 7 指根：开始动作
-            (0.2, 0.6),                 # 8 指中
-            (0.3, 0.9),                 # 9 指尖：最后收紧
-            
-            # 无名指 (位置 10-12) - 更晚收紧
-            (0.2, 0.4),                 # 10 指根
-            (0.3, 0.7),                 # 11 指中
-            (0.4, 0.9),                 # 12 指尖
-            
-            # 小拇指 (位置 13-15) - 最后收紧
-            (0.4, 0.5),                 # 13 指根
-            (0.5, 0.8),                 # 14 指中
-            (0.6, 1.0),                 # 15 指尖：最后完成
-        ]
-        self.left_hand = Hand(left_open, left_close, left_timing)
+    def __init__(self) -> None:
+        super().__init__(NODE_NAME)
 
-        # --- 2. 右手独立配置 ---
-        right_open = left_open
-        right_close = left_close
-        # 5. 大拇指 (0,1,2,3)：0.6 以后再收紧虎口。
+        self._declare_parameters()
+        self.left_hand = self._load_hand_profile('left')
+        self.right_hand = self._load_hand_profile('right')
 
-        right_timing = left_timing
-        # right_timing = [((0.0,1.0) if i==15 else (1.0,1.0) )for i,j in enumerate(right_open)]
-        print(right_timing)
-        self.right_hand = Hand(right_open, right_close, right_timing)
+        left_trigger_topic = self._get_string_parameter(
+            'left.trigger_topic'
+        )
+        right_trigger_topic = self._get_string_parameter(
+            'right.trigger_topic'
+        )
+        left_output_topic = self._get_string_parameter(
+            'left.output_topic'
+        )
+        right_output_topic = self._get_string_parameter(
+            'right.output_topic'
+        )
 
-        # 订阅者
-        self.create_subscription(Float32, '/pico/left_trigger', self.left_cb, 10)
-        self.create_subscription(Float32, '/pico/right_trigger', self.right_cb, 10)
+        self.left_pub = self.create_publisher(
+            JointControl,
+            left_output_topic,
+            10,
+        )
+        self.right_pub = self.create_publisher(
+            JointControl,
+            right_output_topic,
+            10,
+        )
+        self.create_subscription(
+            Float32,
+            left_trigger_topic,
+            self.left_cb,
+            10,
+        )
+        self.create_subscription(
+            Float32,
+            right_trigger_topic,
+            self.right_cb,
+            10,
+        )
 
-        # 发布者
-        self.left_pub = self.create_publisher(JointControl, '/left/joint_control', 10)
-        self.right_pub = self.create_publisher(JointControl, '/right/joint_control', 10)
+        self.get_logger().info(
+            'Dual hand controller started: '
+            f'{left_trigger_topic} -> {left_output_topic}, '
+            f'{right_trigger_topic} -> {right_output_topic}'
+        )
 
-        self.get_logger().info('Dual Hand Controller with Independent Timing Logic Started.')
+    def _declare_parameters(self) -> None:
+        self.declare_parameter(
+            'left.trigger_topic',
+            '/pico/left_trigger',
+        )
+        self.declare_parameter(
+            'right.trigger_topic',
+            '/pico/right_trigger',
+        )
+        self.declare_parameter(
+            'left.output_topic',
+            '/left/joint_control',
+        )
+        self.declare_parameter(
+            'right.output_topic',
+            '/right/joint_control',
+        )
 
-    def left_cb(self, msg):
+        for side in ('left', 'right'):
+            self.declare_parameter(
+                f'{side}.open_positions',
+                list(DEFAULT_OPEN_POSITIONS),
+            )
+            self.declare_parameter(
+                f'{side}.close_positions',
+                list(DEFAULT_CLOSE_POSITIONS),
+            )
+            self.declare_parameter(
+                f'{side}.timing',
+                _flatten_timing(DEFAULT_TIMING),
+            )
+
+    def _get_string_parameter(self, name: str) -> str:
+        value = self.get_parameter(name).value
+        if not isinstance(value, str) or not value:
+            raise ValueError(f'parameter {name} must be a non-empty string')
+        return value
+
+    def _load_hand_profile(self, side: str) -> HandProfile:
+        return HandProfile(
+            open_positions=_coerce_joint_values(
+                f'{side}.open_positions',
+                self.get_parameter(f'{side}.open_positions').value,
+            ),
+            close_positions=_coerce_joint_values(
+                f'{side}.close_positions',
+                self.get_parameter(f'{side}.close_positions').value,
+            ),
+            timing=_pair_timing(
+                self.get_parameter(f'{side}.timing').value
+            ),
+        )
+
+    def _publish_joint_control(
+        self,
+        publisher,
+        hand: HandProfile,
+        trigger_value: float,
+    ) -> None:
         joint_msg = JointControl()
         joint_msg.header.stamp = self.get_clock().now().to_msg()
-        joint_msg.target_positions = self.left_hand.get_interpolated_positions(msg.data)
-        self.left_pub.publish(joint_msg)
+        joint_msg.target_positions = hand.interpolate(trigger_value)
+        publisher.publish(joint_msg)
 
-    def right_cb(self, msg):
-        joint_msg = JointControl()
-        joint_msg.header.stamp = self.get_clock().now().to_msg()
-        joint_msg.target_positions = self.right_hand.get_interpolated_positions(msg.data)
-        self.right_pub.publish(joint_msg)
+    def left_cb(self, msg: Float32) -> None:
+        self._publish_joint_control(
+            self.left_pub,
+            self.left_hand,
+            msg.data,
+        )
 
-def main(args=None):
+    def right_cb(self, msg: Float32) -> None:
+        self._publish_joint_control(
+            self.right_pub,
+            self.right_hand,
+            msg.data,
+        )
+
+
+def main(args=None) -> None:
+    """Run the dual-hand controller node."""
     rclpy.init(args=args)
     node = PicoDualHandNode()
     try:
@@ -115,6 +297,7 @@ def main(args=None):
     finally:
         node.destroy_node()
         rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()

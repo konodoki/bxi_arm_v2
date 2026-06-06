@@ -1,99 +1,182 @@
 #include "TcpReceiver.h"
-#include <cstdint>
-#include <cstdio>
-#include <sys/socket.h>
+
+#include <CRC.h>
+#include <algorithm>
 #include <arpa/inet.h>
-#include <thread>
-#include <unistd.h>
+#include <array>
+#include <cerrno>
 #include <cstring>
 #include <iostream>
 #include <regex>
-#include <CRC.h>
-std::string LogParser::extractCreatedByIP(const std::string& logLine) {
-    return extractIPAfterPrefix(logLine, "created by");
+#include <sys/socket.h>
+#include <unistd.h>
+#include <utility>
+
+namespace {
+constexpr std::array<uint8_t, 4> kPacketHeader = {
+    0xA1,
+    0xA2,
+    0xA3,
+    0xA4,
+};
+constexpr size_t kReadBufferSize = 512;
+constexpr size_t kPacketSize = sizeof(Tcp_Pack_t);
+}  // namespace
+
+std::string LogParser::extractCreatedByIP(const std::string& log_line) {
+    return extractIPAfterPrefix(log_line, "created by");
 }
 
-std::string LogParser::extractTornDownIP(const std::string& logLine) {
-    return extractIPAfterPrefix(logLine, "torn down by");
+std::string LogParser::extractTornDownIP(const std::string& log_line) {
+    return extractIPAfterPrefix(log_line, "torn down by");
 }
 
-std::string LogParser::extractIPAfterPrefix(const std::string& logLine, const std::string& prefix) {
-    // 动态构建正则表达式：前缀 + 空格 + IP捕获组
-    // \Q...\E 确保前缀中的特殊字符被当作普通字符处理
-    std::regex pattern(prefix + R"(\s+((\d{1,3}\.){3}\d{1,3}))");
+std::string LogParser::extractIPAfterPrefix(
+    const std::string& log_line,
+    const std::string& prefix
+) {
+    const std::regex pattern(prefix + R"(\s+((\d{1,3}\.){3}\d{1,3}))");
     std::smatch match;
-
-    if (std::regex_search(logLine, match, pattern)) {
-        return match[1].str(); // 返回第一个捕获组，即 IP 部分
+    if (std::regex_search(log_line, match, pattern)) {
+        return match[1].str();
     }
-    return "";
+    return {};
 }
-TcpReceiver::TcpReceiver(TcpPackCb cb) : sock(-1) ,cb(cb){
-    buffer.reserve(1024); // 预留空间
+
+TcpReceiver::TcpReceiver(TcpPackCb cb)
+    : sock_(-1),
+      stop_requested_(false),
+      cb_(std::move(cb)) {
+    buffer_.reserve(kPacketSize * 2);
 }
 
 TcpReceiver::~TcpReceiver() {
-    isStop=true;
-    if (sock != -1) close(sock);
-    std::cout<<"客户端销毁"<<ip<<std::endl;
+    stop();
 }
 
-bool TcpReceiver::connectTo(const std::string& ip, int port) {
-    this->ip = ip;
-    sock = socket(AF_INET, SOCK_STREAM, 0);
-    struct sockaddr_in addr;
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(port);
-    inet_pton(AF_INET, ip.c_str(), &addr.sin_addr);
-    if(connect(sock, (struct sockaddr*)&addr, sizeof(addr)) == 0){
-        std::thread rec_thread([this](){
-            uint8_t temp_buf[512];
-            while (!isStop) {
-                ssize_t len = recv(sock, temp_buf, sizeof(temp_buf), 0);
-                if (len <= 0) {
-                    std::cerr << "连接断开或错误" << std::endl;
-                    isStop=true;
-                }
+bool TcpReceiver::connectTo(const std::string& remote_ip, int port) {
+    stop();
+    stop_requested_.store(false);
+    remote_ip_ = remote_ip;
 
-                // 1. 将新数据存入缓冲区
-                buffer.insert(buffer.end(), temp_buf, temp_buf + len);
-
-                // 2. 解析缓冲区
-                processBuffer();
-            }
-        });
-        rec_thread.detach();
+    if (port <= 0 || port > 65535) {
+        std::cerr << "invalid TCP port: " << port << std::endl;
+        return false;
     }
+
+    const int socket_fd = socket(AF_INET, SOCK_STREAM, 0);
+    if (socket_fd == -1) {
+        std::cerr << "socket failed: " << std::strerror(errno) << std::endl;
+        return false;
+    }
+
+    sockaddr_in addr{};
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(static_cast<uint16_t>(port));
+    if (inet_pton(AF_INET, remote_ip.c_str(), &addr.sin_addr) != 1) {
+        std::cerr << "invalid IPv4 address: " << remote_ip << std::endl;
+        close(socket_fd);
+        return false;
+    }
+
+    if (connect(socket_fd, reinterpret_cast<sockaddr*>(&addr), sizeof(addr))
+        != 0) {
+        std::cerr << "connect failed to " << remote_ip << ":" << port
+                  << ": " << std::strerror(errno) << std::endl;
+        close(socket_fd);
+        return false;
+    }
+
+    sock_.store(socket_fd);
+    receiver_thread_ = std::thread(&TcpReceiver::readLoop, this);
     return true;
 }
 
-void TcpReceiver::processBuffer() {
-    const size_t PACK_SIZE = sizeof(Tcp_Pack_t);
+void TcpReceiver::stop() {
+    stop_requested_.store(true);
 
-    // 只要缓冲区长度够一个包，就尝试解析
-    while (buffer.size() >= PACK_SIZE && !isStop) {
-        // 检查包头是否匹配 0xA1 0xA2 0xA3 0xA4
-        if ((uint8_t)buffer[0] == 0xA1 && (uint8_t)buffer[1] == 0xA2 && 
-            (uint8_t)buffer[2] == 0xA3 && (uint8_t)buffer[3] == 0xA4) {
-            
-            // 提取数据包
-            union {
-                Tcp_Pack_t pack;
-                uint8_t bytes[PACK_SIZE];
-            } u;
+    const int socket_fd = sock_.exchange(-1);
+    if (socket_fd != -1) {
+        shutdown(socket_fd, SHUT_RDWR);
+        close(socket_fd);
+    }
 
-            std::copy(buffer.begin(), buffer.begin() + PACK_SIZE, u.bytes);
-            uint32_t crc = CRC::Calculate(u.bytes,PACK_SIZE-4,CRC::CRC_32());
-            if(u.pack.crc==crc){
-                cb(u.pack);
-            }else{
-                printf("数据有误");
-            }
-            // 从缓冲区移除已处理的数据
-            buffer.erase(buffer.begin(), buffer.begin() + PACK_SIZE);
-        } else {
-            // 如果头不匹配，说明流数据错位，丢弃第一个字节继续寻找下一个可能的头
-            buffer.erase(buffer.begin());
+    if (receiver_thread_.joinable()
+        && receiver_thread_.get_id() != std::this_thread::get_id()) {
+        receiver_thread_.join();
+    }
+}
+
+const std::string& TcpReceiver::remoteIp() const {
+    return remote_ip_;
+}
+
+void TcpReceiver::readLoop() {
+    std::array<uint8_t, kReadBufferSize> temp_buf{};
+
+    while (!stop_requested_.load()) {
+        const int socket_fd = sock_.load();
+        if (socket_fd == -1) {
+            break;
         }
+
+        const ssize_t len = recv(
+            socket_fd,
+            temp_buf.data(),
+            temp_buf.size(),
+            0
+        );
+        if (len > 0) {
+            buffer_.insert(
+                buffer_.end(),
+                temp_buf.begin(),
+                temp_buf.begin() + len
+            );
+            processBuffer();
+            continue;
+        }
+
+        if (len == 0) {
+            std::cerr << "tcp connection closed: " << remote_ip_ << std::endl;
+        } else if (!stop_requested_.load()) {
+            std::cerr << "recv failed from " << remote_ip_ << ": "
+                      << std::strerror(errno) << std::endl;
+        }
+        break;
+    }
+
+    const int socket_fd = sock_.exchange(-1);
+    if (socket_fd != -1) {
+        close(socket_fd);
+    }
+    stop_requested_.store(true);
+}
+
+void TcpReceiver::processBuffer() {
+    while (buffer_.size() >= kPacketSize && !stop_requested_.load()) {
+        if (!std::equal(
+                kPacketHeader.begin(),
+                kPacketHeader.end(),
+                buffer_.begin()
+            )) {
+            buffer_.erase(buffer_.begin());
+            continue;
+        }
+
+        Tcp_Pack_t pack{};
+        std::memcpy(&pack, buffer_.data(), kPacketSize);
+
+        const uint32_t crc = CRC::Calculate(
+            buffer_.data(),
+            kPacketSize - sizeof(pack.crc),
+            CRC::CRC_32()
+        );
+        if (pack.crc == crc && cb_) {
+            cb_(pack);
+        } else {
+            std::cerr << "invalid tcp packet crc" << std::endl;
+        }
+
+        buffer_.erase(buffer_.begin(), buffer_.begin() + kPacketSize);
     }
 }

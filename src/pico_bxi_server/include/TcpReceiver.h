@@ -1,10 +1,12 @@
 #ifndef TCP_RECEIVER_H
 #define TCP_RECEIVER_H
 
-#include <functional>
-#include <vector>
-#include <string>
+#include <atomic>
 #include <cstdint>
+#include <functional>
+#include <string>
+#include <thread>
+#include <vector>
 
 typedef struct Tcp_Pack {
     char header[4];
@@ -24,35 +26,41 @@ typedef struct Tcp_Pack {
 } Tcp_Pack_t;
 
 typedef std::function<void(const Tcp_Pack_t& p)> TcpPackCb;
+
 class LogParser {
 public:
-    // 提取 "created by " 之后的 IP
-    static std::string extractCreatedByIP(const std::string& logLine);
-
-    // 提取 "torn down by " 之后的 IP (新增加)
-    static std::string extractTornDownIP(const std::string& logLine);
+    static std::string extractCreatedByIP(const std::string& log_line);
+    static std::string extractTornDownIP(const std::string& log_line);
 
 private:
-    // 内部通用的提取逻辑
-    static std::string extractIPAfterPrefix(const std::string& logLine, const std::string& prefix);
+    static std::string extractIPAfterPrefix(
+        const std::string& log_line,
+        const std::string& prefix
+    );
 };
+
 class TcpReceiver {
 public:
-    std::string ip;
-    TcpReceiver(TcpPackCb cb);
+    explicit TcpReceiver(TcpPackCb cb);
     ~TcpReceiver();
 
-    bool connectTo(const std::string& ip, int port);
-    // 核心逻辑：不断运行，处理数据并回调
-    void startListening();
+    TcpReceiver(const TcpReceiver&) = delete;
+    TcpReceiver& operator=(const TcpReceiver&) = delete;
+
+    bool connectTo(const std::string& remote_ip, int port);
+    void stop();
+    const std::string& remoteIp() const;
 
 private:
-    int sock;
-    bool isStop=false;
-    std::vector<uint8_t> buffer; // 接收缓冲区
-    TcpPackCb cb;
-    // 解析缓冲区中的数据
+    void readLoop();
     void processBuffer();
+
+    std::atomic<int> sock_;
+    std::atomic_bool stop_requested_;
+    std::thread receiver_thread_;
+    std::vector<uint8_t> buffer_;
+    TcpPackCb cb_;
+    std::string remote_ip_;
 };
 
 #endif
